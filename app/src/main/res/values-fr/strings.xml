@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="hello_world">allo monde</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Answers -->
+    <string name="a_yes">Oui</string>
+    <string name="a_no">Non</string>
+
+</resources>

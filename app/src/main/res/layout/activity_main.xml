@@ -10,68 +10,493 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Previous"
-            android:onClick="btnPrevious"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:onClick="btnNext"/>
-
-    </LinearLayout>
 
     <ViewFlipper
-        android:id="@+id/ViewFlipper01"
+        android:id="@+id/ViewFlipper"
         android:layout_width="match_parent"
         android:layout_height="fill_parent" >
 
         <LinearLayout
-            android:layout_width="320dp"
-            android:layout_height="435dp"
-            android:orientation="vertical" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1">
 
-            <TextView
-                android:id="@+id/TextView01"
+            <ImageButton
+                android:id="@+id/buttonEN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Flipper Content 1" >
-            </TextView>
+                android:src="@drawable/flag_uk"
+                android:layout_weight="0.5"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@null"
+                android:onClick="selectLanguageEn"/>
+
+            <ImageButton
+                android:id="@+id/buttonFR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/flag_fr"
+                android:layout_weight="0.5"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@null"
+                android:onClick="selectLanguageFr"/>
+
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/TextView02"
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:text="@string/text_first_name"/>
+
+                <EditText
+                    android:id="@+id/edit_first_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:hint="@string/hint_first_name" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:text="@string/text_last_name"/>
+
+                <EditText
+                    android:id="@+id/edit_last_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:hint="@string/hint_last_name"  />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:text="@string/text_hospital_id"/>
+
+                <EditText
+                    android:id="@+id/edit_hospital_id"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:hint="@string/hint_hospital_id" />
+
+            </LinearLayout>
+
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Flipper Content 2" >
-            </TextView>
+                android:text="@string/button_start"
+                android:onClick="buttonStart"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <TextView
-                android:id="@+id/TextView03"
+                android:id="@+id/q1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/q1"
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:gravity="center_vertical|center_horizontal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_yes"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonYes"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_no"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonNo"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/q2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/q2"
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:gravity="center_vertical|center_horizontal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_yes"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonYes"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_no"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonNo"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/q3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/q3"
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:gravity="center_vertical|center_horizontal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_yes"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonYes"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_no"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonNo"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/q4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/q4"
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:gravity="center_vertical|center_horizontal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_yes"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonYes"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_no"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonNo"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/q5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/q5"
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:gravity="center_vertical|center_horizontal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_yes"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonYes"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_no"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonNo"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/q6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/q6"
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:gravity="center_vertical|center_horizontal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_yes"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonYes"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_no"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonNo"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/q7"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/q7"
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:gravity="center_vertical|center_horizontal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_yes"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonYes"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_no"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonNo"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/q8"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/q8"
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:gravity="center_vertical|center_horizontal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_yes"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonYes"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="@string/a_no"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="buttonNo"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="@string/completed"
+                android:textSize="24sp"
+                android:gravity="center_vertical|center_horizontal"/>
+
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Flipper Content 3" >
-            </TextView>
+                android:text="@string/button_conclude"
+                android:onClick="concludeQuestionnaire"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal|center_vertical"/>
+
         </LinearLayout>
+
+
     </ViewFlipper>
 
 </LinearLayout>

@@ -1,6 +1,40 @@
 <resources>
-    <string name="app_name">PatientQuestionnaire</string>
+    <string name="app_name">Questionnaire</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Action buttons -->
+    <string name="action_view_database">View database</string>
+    <string name="action_delete_all">Delete all records</string>
+    <string name="action_undo">UNDO</string>
+    <string name="action_skip">SKIP</string>
+
+    <!-- Introduction screens-->
+    <string name="text_first_name">First name:</string>
+    <string name="text_last_name">Last name:</string>
+    <string name="text_hospital_id">Hospital ID:</string>
+    <string name="hint_first_name">Enter first name</string>
+    <string name="hint_last_name">Enter last name</string>
+    <string name="hint_hospital_id">Enter hospital ID</string>
+    <string name="button_start">START</string>
+    <string name="button_conclude">Click to finish</string>
+
+    <!-- Questions -->
+    <string name="q1">Are you basically satisfied with your life?</string>
+    <string name="q2">Do you feel that your life is empty?</string>
+    <string name="q3">Do you often get bored?</string>
+    <string name="q4">Are you in good spirits most of the time?</string>
+    <string name="q5">Do you feel happy most of the time?</string>
+    <string name="q6">Do you often feel helpless?</string>
+    <string name="q7">Do you think it is wonderful to be alive now?</string>
+    <string name="q8">Do you feel that your situation is hopeless?</string>
+    <string name="completed">Questionnaire complete!</string>
+
+    <!-- Answers -->
+    <string name="a_yes">Yes</string>
+    <string name="a_no">No</string>
+    <string name="title_activity_view_database">ViewDatabase</string>
+
+
 </resources>
