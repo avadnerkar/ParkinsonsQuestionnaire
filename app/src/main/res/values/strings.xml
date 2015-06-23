@@ -4,6 +4,13 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string-array
+        name="section_titles">
+        <item>Section 1</item>
+        <item>Section 2</item>
+        <item>Section 3</item>
+    </string-array>
+
     <!-- Action buttons -->
     <string name="action_view_database">View database</string>
     <string name="action_delete_all">Delete all records</string>
@@ -19,17 +26,43 @@
     <string name="hint_hospital_id">Enter hospital ID</string>
     <string name="button_start">START</string>
     <string name="button_conclude">Click to finish</string>
+    <string name="completed">Questionnaire complete!</string>
 
     <!-- Questions -->
-    <string name="q1">Are you basically satisfied with your life?</string>
-    <string name="q2">Do you feel that your life is empty?</string>
-    <string name="q3">Do you often get bored?</string>
-    <string name="q4">Are you in good spirits most of the time?</string>
-    <string name="q5">Do you feel happy most of the time?</string>
-    <string name="q6">Do you often feel helpless?</string>
-    <string name="q7">Do you think it is wonderful to be alive now?</string>
-    <string name="q8">Do you feel that your situation is hopeless?</string>
-    <string name="completed">Questionnaire complete!</string>
+
+    <!-- Geriatric depression scale -->
+    <string name="gds1">Are you basically satisfied with your life?</string>
+    <string name="gds2">Do you feel that your life is empty?</string>
+    <string name="gds3">Do you often get bored?</string>
+    <string name="gds4">Are you in good spirits most of the time?</string>
+    <string name="gds5">Do you feel happy most of the time?</string>
+    <string name="gds6">Do you often feel helpless?</string>
+    <string name="gds7">Do you think it is wonderful to be alive now?</string>
+    <string name="gds8">Do you feel that your situation is hopeless?</string>
+
+
+    <!-- Perceived deficit questionnaire -->
+    <string name="pdq1">Lose your train of thought when speaking?</string>
+    <string name="pdq2">Have difficulty remembering the names of people, even ones you have met several times?</string>
+    <string name="pdq3">Forget what you came in for?</string>
+    <string name="pdq4">Have trouble getting things organized?</string>
+    <string name="pdq5">Have trouble concentrating on what people are saying during a conversation?</string>
+    <string name="pdq6">Forget if you had already done something?</string>
+    <string name="pdq7">Miss appointments and meetings you had scheduled?</string>
+    <string name="pdq8">Have difficulty planning what to do in the day?</string>
+    <string name="pdq9">Have trouble concentrating on things like watching a television program or reading a book?</string>
+    <string name="pdq10">Forget what you did the night before?</string>
+    <string name="pdq11">Forget the date unless you looked it up?</string>
+    <string name="pdq12">Have trouble getting started, even if you had a lot of things to do?</string>
+    <string name="pdq13">Find your mind drifting?</string>
+    <string name="pdq14">Forget what you talked about after a telephone conversation?</string>
+    <string name="pdq15">Forget to do things like turn off the stove or turn on your alarm clock?</string>
+    <string name="pdq16">Feel like your mind went totally blank?</string>
+    <string name="pdq17">Have trouble holding phone numbers in your head, even for a few seconds?</string>
+    <string name="pdq18">Forget what you did last weekend?</string>
+    <string name="pdq19">Forget to take your medication?</string>
+    <string name="pdq20">Have trouble making decisions?</string>
+
 
     <!-- Answers -->
     <string name="a_yes">Yes</string>

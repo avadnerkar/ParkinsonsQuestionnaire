@@ -6,14 +6,18 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Environment;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -33,11 +37,25 @@ public class MainActivity extends ActionBarActivity {
     public static int numIntroScreens = 2;
     public static DBAdapter myDb;
     public static long currentPatientId;
+    private String[] mSectionTitles;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    public CharSequence mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mSectionTitles = getResources().getStringArray(R.array.section_titles);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        // Set the adapter for the list view
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+                R.layout.drawer_list_item, mSectionTitles));
+        // Set the list's click listener
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
         vf = (ViewFlipper) findViewById(R.id.ViewFlipper);
         count = vf.getChildCount();
         System.out.println(count);
@@ -236,5 +254,21 @@ public class MainActivity extends ActionBarActivity {
 
 
     }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView parent, View view, int position, long id) {
+
+            mDrawerList.setItemChecked(position, true);
+
+
+            mDrawerLayout.closeDrawer(mDrawerList);
+
+
+
+        }
+    }
+
+
 
 }
