@@ -222,14 +222,14 @@ public class MainActivity extends ActionBarActivity {
             writer.writeNext(c.getColumnNames());
 
             String questionStr[] = {"", "", "", "",
-                    getResources().getString(R.string.q1),
-                    getResources().getString(R.string.q2),
-                    getResources().getString(R.string.q3),
-                    getResources().getString(R.string.q4),
-                    getResources().getString(R.string.q5),
-                    getResources().getString(R.string.q6),
-                    getResources().getString(R.string.q7),
-                    getResources().getString(R.string.q8)};
+                    getResources().getString(R.string.gds1),
+                    getResources().getString(R.string.gds2),
+                    getResources().getString(R.string.gds3),
+                    getResources().getString(R.string.gds4),
+                    getResources().getString(R.string.gds5),
+                    getResources().getString(R.string.gds6),
+                    getResources().getString(R.string.gds7),
+                    getResources().getString(R.string.gds8)};
 
             writer.writeNext(questionStr);
 

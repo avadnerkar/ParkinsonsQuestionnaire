@@ -42,6 +42,7 @@
 
 
     <!-- Perceived deficit questionnaire -->
+    <string name="pdqIntro">During the past 4 weeks, how often did you...</string>
     <string name="pdq1">Lose your train of thought when speaking?</string>
     <string name="pdq2">Have difficulty remembering the names of people, even ones you have met several times?</string>
     <string name="pdq3">Forget what you came in for?</string>
