@@ -6,9 +6,9 @@
 
     <string-array
         name="section_titles">
-        <item>Section 1</item>
-        <item>Section 2</item>
-        <item>Section 3</item>
+        <item>GDS</item>
+        <item>PDQ</item>
+        <item>VAHS</item>
     </string-array>
 
     <!-- Action buttons -->
@@ -27,10 +27,13 @@
     <string name="button_start">START</string>
     <string name="button_conclude">Click to finish</string>
     <string name="completed">Questionnaire complete!</string>
+    <string name="next">NEXT</string>
 
     <!-- Questions -->
 
     <!-- Geriatric depression scale -->
+    <string name="gdsTitle">GDS</string>
+    <string name="gdsPreamble">Please select yes or no for each question</string>
     <string name="gds1">Are you basically satisfied with your life?</string>
     <string name="gds2">Do you feel that your life is empty?</string>
     <string name="gds3">Do you often get bored?</string>
@@ -42,9 +45,11 @@
 
 
     <!-- Perceived deficit questionnaire -->
+    <string name="pdqTitle">PDQ</string>
+    <string name="pdqPreamble">The following questions describe several situations in which a person may encounter problems with memory, attention or concentration.  If you are marking your own answers, please check the appropriate response based on your cognitive function during the past 4 weeks.  Please answer every question.  If you are not sure which answer to select, please choose the one answer that comes closest to describing you.</string>
     <string name="pdqIntro">During the past 4 weeks, how often did you...</string>
     <string name="pdq1">Lose your train of thought when speaking?</string>
-    <string name="pdq2">Have difficulty remembering the names of people, even ones you have met several times?</string>
+    <string name="pdq2">Have difficulty remembering the names of people - even ones you have met several times?</string>
     <string name="pdq3">Forget what you came in for?</string>
     <string name="pdq4">Have trouble getting things organized?</string>
     <string name="pdq5">Have trouble concentrating on what people are saying during a conversation?</string>
@@ -54,21 +59,38 @@
     <string name="pdq9">Have trouble concentrating on things like watching a television program or reading a book?</string>
     <string name="pdq10">Forget what you did the night before?</string>
     <string name="pdq11">Forget the date unless you looked it up?</string>
-    <string name="pdq12">Have trouble getting started, even if you had a lot of things to do?</string>
+    <string name="pdq12">Have trouble getting started - even if you had a lot of things to do?</string>
     <string name="pdq13">Find your mind drifting?</string>
     <string name="pdq14">Forget what you talked about after a telephone conversation?</string>
     <string name="pdq15">Forget to do things like turn off the stove or turn on your alarm clock?</string>
     <string name="pdq16">Feel like your mind went totally blank?</string>
-    <string name="pdq17">Have trouble holding phone numbers in your head, even for a few seconds?</string>
+    <string name="pdq17">Have trouble holding phone numbers in your head - even for a few seconds?</string>
     <string name="pdq18">Forget what you did last weekend?</string>
     <string name="pdq19">Forget to take your medication?</string>
     <string name="pdq20">Have trouble making decisions?</string>
+
+    <string name="vahsTitle">Visual Analogue Health States</string>
+    <string name="vahsPreamble">These questions relate to your recent experience with your health and other symptoms.  Please rate each on a scale from 0 to 10.</string>
+    <string name="vahs1">How would you rate your overall health?</string>
+    <string name="vahs2">How well are you sleeping?</string>
+    <string name="vahs3">How much distress are you experiencing?</string>
+    <string name="vahs4">How much pain are you experiencing?</string>
+    <string name="vahs5">How much fatigue are you experiencing?</string>
+    <string name="vahs6">How much depression are you experiencing?</string>
+    <string name="vahs7">How much anxiety are you experiencing?</string>
+    <string name="vahs8">How would you rate your overall quality of life?</string>
 
 
     <!-- Answers -->
     <string name="a_yes">Yes</string>
     <string name="a_no">No</string>
     <string name="title_activity_view_database">ViewDatabase</string>
+    <string name="a_never">Never</string>
+    <string name="a_rarely">Rarely</string>
+    <string name="a_sometimes">Sometimes</string>
+    <string name="a_often">Often</string>
+    <string name="a_almost_always">Almost always</string>
+
 
 
 </resources>

@@ -26,45 +26,128 @@ public class DBAdapter {
 
     // TODO: Setup your identification fields here:
     public static final int NUM_ID_FIELDS = 3;
+    public static final int NUM_SCORE_FIELDS = 3;
+    public static final int NUM_GDS_FIELDS = 8;
+    public static final int NUM_PDQ_FIELDS = 20;
+    public static final int NUM_VAHS_FIELDS = 8;
+
+    public static final int ORDER_GDS = 1;
+    public static final int ORDER_PDQ = 2;
+    public static final int ORDER_VAHS = 3;
+
     public static final String KEY_FIRSTNAME = "FirstName";
     public static final String KEY_LASTNAME = "LastName";
     public static final String KEY_HOSPITALID = "HospitalId";
-
+    public static final String KEY_GDS_SCORE = "GDSscore";
+    public static final String KEY_PDQ_SCORE = "PDQscore";
+    public static final String KEY_VAHS_SCORE = "VAHSscore";
 
     // TODO: Setup your identification fields here:
-    public static final String KEY_Q1 = "Q1";
-    public static final String KEY_Q2 = "Q2";
-    public static final String KEY_Q3 = "Q3";
-    public static final String KEY_Q4 = "Q4";
-    public static final String KEY_Q5 = "Q5";
-    public static final String KEY_Q6 = "Q6";
-    public static final String KEY_Q7 = "Q7";
-    public static final String KEY_Q8 = "Q8";
+
+    public static final String KEY_GDS1 = "GDS1";
+    public static final String KEY_GDS2 = "GDS2";
+    public static final String KEY_GDS3 = "GDS3";
+    public static final String KEY_GDS4 = "GDS4";
+    public static final String KEY_GDS5 = "GDS5";
+    public static final String KEY_GDS6 = "GDS6";
+    public static final String KEY_GDS7 = "GDS7";
+    public static final String KEY_GDS8 = "GDS8";
+
+    public static final String KEY_PDQ1 = "PDQ1";
+    public static final String KEY_PDQ2 = "PDQ2";
+    public static final String KEY_PDQ3 = "PDQ3";
+    public static final String KEY_PDQ4 = "PDQ4";
+    public static final String KEY_PDQ5 = "PDQ5";
+    public static final String KEY_PDQ6 = "PDQ6";
+    public static final String KEY_PDQ7 = "PDQ7";
+    public static final String KEY_PDQ8 = "PDQ8";
+    public static final String KEY_PDQ9 = "PDQ9";
+    public static final String KEY_PDQ10 = "PDQ10";
+    public static final String KEY_PDQ11 = "PDQ11";
+    public static final String KEY_PDQ12 = "PDQ12";
+    public static final String KEY_PDQ13 = "PDQ13";
+    public static final String KEY_PDQ14 = "PDQ14";
+    public static final String KEY_PDQ15 = "PDQ15";
+    public static final String KEY_PDQ16 = "PDQ16";
+    public static final String KEY_PDQ17 = "PDQ17";
+    public static final String KEY_PDQ18 = "PDQ18";
+    public static final String KEY_PDQ19 = "PDQ19";
+    public static final String KEY_PDQ20 = "PDQ20";
+
+    public static final String KEY_VAHS1 = "VAHS1";
+    public static final String KEY_VAHS2 = "VAHS2";
+    public static final String KEY_VAHS3 = "VAHS3";
+    public static final String KEY_VAHS4 = "VAHS4";
+    public static final String KEY_VAHS5 = "VAHS5";
+    public static final String KEY_VAHS6 = "VAHS6";
+    public static final String KEY_VAHS7 = "VAHS7";
+    public static final String KEY_VAHS8 = "VAHS8";
 
     // TODO: Setup your data field numbers here (0 = KEY_ROWID, 1=...)
     public static final int COL_FIRSTNAME = 1;
     public static final int COL_LASTNAME = 2;
     public static final int COL_HOSPITALID = 3;
-    public static final int COL_Q1 = 1 + NUM_ID_FIELDS;
-    public static final int COL_Q2 = 2 + NUM_ID_FIELDS;
-    public static final int COL_Q3 = 3 + NUM_ID_FIELDS;
-    public static final int COL_Q4 = 4 + NUM_ID_FIELDS;
-    public static final int COL_Q5 = 5 + NUM_ID_FIELDS;
-    public static final int COL_Q6 = 6 + NUM_ID_FIELDS;
-    public static final int COL_Q7 = 7 + NUM_ID_FIELDS;
-    public static final int COL_Q8 = 8 + NUM_ID_FIELDS;
+    public static final int COL_GDS_SCORE = 4;
+    public static final int COL_PDQ_SCORE = 5;
+    public static final int COL_VAHS_SCORE = 6;
+
+    public static final int COL_GDS1 = 1 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
+    public static final int COL_GDS2 = 2 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
+    public static final int COL_GDS3 = 3 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
+    public static final int COL_GDS4 = 4 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
+    public static final int COL_GDS5 = 5 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
+    public static final int COL_GDS6 = 6 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
+    public static final int COL_GDS7 = 7 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
+    public static final int COL_GDS8 = 8 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
+
+
+    public static final int COL_PDQ1 = 1 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ2 = 2 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ3 = 3 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ4 = 4 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ5 = 5 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ6 = 6 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ7 = 7 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ8 = 8 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ9 = 9 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ10 = 10 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ11 = 11 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ12 = 12 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ13 = 13 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ14 = 14 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ15 = 15 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ16 = 16 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ17 = 17 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ18 = 18 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ19 = 19 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+    public static final int COL_PDQ20 = 20 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
+
+    public static final int COL_VAHS1 = 1 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
+    public static final int COL_VAHS2 = 2 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
+    public static final int COL_VAHS3 = 3 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
+    public static final int COL_VAHS4 = 4 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
+    public static final int COL_VAHS5 = 5 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
+    public static final int COL_VAHS6 = 6 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
+    public static final int COL_VAHS7 = 7 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
+    public static final int COL_VAHS8 = 8 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
+
+
 
 
     //TODO: Set all keys for data table
     public static final String[] ALL_DATA_KEYS = new String[] {KEY_ROWID, KEY_FIRSTNAME, KEY_LASTNAME, KEY_HOSPITALID,
-            KEY_Q1, KEY_Q2, KEY_Q3, KEY_Q4, KEY_Q5, KEY_Q6, KEY_Q7, KEY_Q8};
+            KEY_GDS_SCORE, KEY_PDQ_SCORE, KEY_VAHS_SCORE,
+            KEY_GDS1, KEY_GDS2, KEY_GDS3, KEY_GDS4, KEY_GDS5, KEY_GDS6, KEY_GDS7, KEY_GDS8,
+            KEY_PDQ1, KEY_PDQ2, KEY_PDQ3, KEY_PDQ4, KEY_PDQ5, KEY_PDQ6, KEY_PDQ7, KEY_PDQ8, KEY_PDQ9, KEY_PDQ10, KEY_PDQ11, KEY_PDQ12, KEY_PDQ13, KEY_PDQ14, KEY_PDQ15, KEY_PDQ16, KEY_PDQ17, KEY_PDQ18, KEY_PDQ19, KEY_PDQ20,
+            KEY_VAHS1, KEY_VAHS2, KEY_VAHS3, KEY_VAHS4, KEY_VAHS5, KEY_VAHS6, KEY_VAHS7, KEY_VAHS8
+    };
 
     // DB info: its name, and the tables we are using
     public static final String DATABASE_NAME = "PatientQuestionnaire";
     public static final String DATA_TABLE = "dataTable";
 
     // Track DB version if a new version of your app changes the format.
-    public static final int DATABASE_VERSION = 4;
+    public static final int DATABASE_VERSION = 16;
 
 
     //Table Create Statements
@@ -87,14 +170,49 @@ public class DBAdapter {
                     + KEY_FIRSTNAME + " text, "
                     + KEY_LASTNAME + " text, "
                     + KEY_HOSPITALID + " text, "
-                    + KEY_Q1 + " text, "
-                    + KEY_Q2 + " text, "
-                    + KEY_Q3 + " text, "
-                    + KEY_Q4 + " text, "
-                    + KEY_Q5 + " text, "
-                    + KEY_Q6 + " text, "
-                    + KEY_Q7 + " text, "
-                    + KEY_Q8 + " text"
+
+                    + KEY_GDS_SCORE + " text, "
+                    + KEY_PDQ_SCORE + " text, "
+                    + KEY_VAHS_SCORE + " text, "
+
+                    + KEY_GDS1 + " text, "
+                    + KEY_GDS2 + " text, "
+                    + KEY_GDS3 + " text, "
+                    + KEY_GDS4 + " text, "
+                    + KEY_GDS5 + " text, "
+                    + KEY_GDS6 + " text, "
+                    + KEY_GDS7 + " text, "
+                    + KEY_GDS8 + " text, "
+
+                    + KEY_PDQ1 + " text, "
+                    + KEY_PDQ2 + " text, "
+                    + KEY_PDQ3 + " text, "
+                    + KEY_PDQ4 + " text, "
+                    + KEY_PDQ5 + " text, "
+                    + KEY_PDQ6 + " text, "
+                    + KEY_PDQ7 + " text, "
+                    + KEY_PDQ8 + " text, "
+                    + KEY_PDQ9 + " text, "
+                    + KEY_PDQ10 + " text, "
+                    + KEY_PDQ11 + " text, "
+                    + KEY_PDQ12 + " text, "
+                    + KEY_PDQ13 + " text, "
+                    + KEY_PDQ14 + " text, "
+                    + KEY_PDQ15 + " text, "
+                    + KEY_PDQ16 + " text, "
+                    + KEY_PDQ17 + " text, "
+                    + KEY_PDQ18 + " text, "
+                    + KEY_PDQ19 + " text, "
+                    + KEY_PDQ20 + " text, "
+
+                    + KEY_VAHS1 + " text, "
+                    + KEY_VAHS2 + " text, "
+                    + KEY_VAHS3 + " text, "
+                    + KEY_VAHS4 + " text, "
+                    + KEY_VAHS5 + " text, "
+                    + KEY_VAHS6 + " text, "
+                    + KEY_VAHS7 + " text, "
+                    + KEY_VAHS8 + " text"
 
 
                     // Rest  of creation:
@@ -184,7 +302,7 @@ public class DBAdapter {
     }
 
     // Change an existing row to be equal to new data.
-    public boolean updateAnswer(long rowId, int questionNum, String answer) {
+    public boolean updateAnswer(long rowId, int sqlColumn, String answer) {
 
 		/*
 		 * CHANGE 4:
@@ -199,7 +317,7 @@ public class DBAdapter {
         // Create row's data:
         ContentValues newValues = new ContentValues();
         Cursor c = getRowData(rowId);
-        String key = c.getColumnName(questionNum + NUM_ID_FIELDS);
+        String key = c.getColumnName(sqlColumn);
 
         newValues.put(key, answer);
 
@@ -225,6 +343,7 @@ public class DBAdapter {
 
         @Override
         public void onCreate(SQLiteDatabase _db) {
+            Log.v(TAG,DATA_CREATE_SQL);
             _db.execSQL(DATA_CREATE_SQL);
         }
 

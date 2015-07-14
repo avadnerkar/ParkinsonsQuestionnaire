@@ -22,7 +22,7 @@ public class ViewDatabase extends ActionBarActivity {
         if (c.moveToFirst()){
             do {
                 displayText = displayText + c.getString(MainActivity.myDb.COL_FIRSTNAME) + " " + c.getString(MainActivity.myDb.COL_LASTNAME) + " " + c.getString(MainActivity.myDb.COL_HOSPITALID) + " " +
-                        c.getString(MainActivity.myDb.COL_Q1) + " " + c.getString(MainActivity.myDb.COL_Q2) + " " + c.getString(MainActivity.myDb.COL_Q3) + "\n";
+                        c.getString(MainActivity.myDb.COL_GDS1) + " " + c.getString(MainActivity.myDb.COL_GDS2) + " " + c.getString(MainActivity.myDb.COL_GDS3) + "\n";
             } while(c.moveToNext());
         }
 
