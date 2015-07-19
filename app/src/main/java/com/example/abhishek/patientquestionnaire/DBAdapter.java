@@ -25,22 +25,16 @@ public class DBAdapter {
 
 
     // TODO: Setup your identification fields here:
-    public static final int NUM_ID_FIELDS = 3;
-    public static final int NUM_SCORE_FIELDS = 3;
-    public static final int NUM_GDS_FIELDS = 8;
-    public static final int NUM_PDQ_FIELDS = 20;
-    public static final int NUM_VAHS_FIELDS = 8;
-
-    public static final int ORDER_GDS = 1;
-    public static final int ORDER_PDQ = 2;
-    public static final int ORDER_VAHS = 3;
 
     public static final String KEY_FIRSTNAME = "FirstName";
     public static final String KEY_LASTNAME = "LastName";
     public static final String KEY_HOSPITALID = "HospitalId";
     public static final String KEY_GDS_SCORE = "GDSscore";
-    public static final String KEY_PDQ_SCORE = "PDQscore";
+    public static final String KEY_PDQ20_SCORE = "PDQ20score";
     public static final String KEY_VAHS_SCORE = "VAHSscore";
+    public static final String KEY_SF36_SCORE = "SF36score";
+    public static final String KEY_NMS_SCORE = "NMSscore";
+    public static final String KEY_LSM_SCORE = "LSMscore";
 
     // TODO: Setup your identification fields here:
 
@@ -53,26 +47,26 @@ public class DBAdapter {
     public static final String KEY_GDS7 = "GDS7";
     public static final String KEY_GDS8 = "GDS8";
 
-    public static final String KEY_PDQ1 = "PDQ1";
-    public static final String KEY_PDQ2 = "PDQ2";
-    public static final String KEY_PDQ3 = "PDQ3";
-    public static final String KEY_PDQ4 = "PDQ4";
-    public static final String KEY_PDQ5 = "PDQ5";
-    public static final String KEY_PDQ6 = "PDQ6";
-    public static final String KEY_PDQ7 = "PDQ7";
-    public static final String KEY_PDQ8 = "PDQ8";
-    public static final String KEY_PDQ9 = "PDQ9";
-    public static final String KEY_PDQ10 = "PDQ10";
-    public static final String KEY_PDQ11 = "PDQ11";
-    public static final String KEY_PDQ12 = "PDQ12";
-    public static final String KEY_PDQ13 = "PDQ13";
-    public static final String KEY_PDQ14 = "PDQ14";
-    public static final String KEY_PDQ15 = "PDQ15";
-    public static final String KEY_PDQ16 = "PDQ16";
-    public static final String KEY_PDQ17 = "PDQ17";
-    public static final String KEY_PDQ18 = "PDQ18";
-    public static final String KEY_PDQ19 = "PDQ19";
-    public static final String KEY_PDQ20 = "PDQ20";
+    public static final String KEY_PDQ20_1 = "PDQ20_1";
+    public static final String KEY_PDQ20_2 = "PDQ20_2";
+    public static final String KEY_PDQ20_3 = "PDQ20_3";
+    public static final String KEY_PDQ20_4 = "PDQ20_4";
+    public static final String KEY_PDQ20_5 = "PDQ20_5";
+    public static final String KEY_PDQ20_6 = "PDQ20_6";
+    public static final String KEY_PDQ20_7 = "PDQ20_7";
+    public static final String KEY_PDQ20_8 = "PDQ20_8";
+    public static final String KEY_PDQ20_9 = "PDQ20_9";
+    public static final String KEY_PDQ20_10 = "PDQ20_10";
+    public static final String KEY_PDQ20_11 = "PDQ20_11";
+    public static final String KEY_PDQ20_12 = "PDQ20_12";
+    public static final String KEY_PDQ20_13 = "PDQ20_13";
+    public static final String KEY_PDQ20_14 = "PDQ20_14";
+    public static final String KEY_PDQ20_15 = "PDQ20_15";
+    public static final String KEY_PDQ20_16 = "PDQ20_16";
+    public static final String KEY_PDQ20_17 = "PDQ20_17";
+    public static final String KEY_PDQ20_18 = "PDQ20_18";
+    public static final String KEY_PDQ20_19 = "PDQ20_19";
+    public static final String KEY_PDQ20_20 = "PDQ20_20";
 
     public static final String KEY_VAHS1 = "VAHS1";
     public static final String KEY_VAHS2 = "VAHS2";
@@ -83,63 +77,69 @@ public class DBAdapter {
     public static final String KEY_VAHS7 = "VAHS7";
     public static final String KEY_VAHS8 = "VAHS8";
 
+    public static final String KEY_SF36_1 = "SF36_1";
+    public static final String KEY_SF36_2 = "SF36_2";
+    public static final String KEY_SF36_3 = "SF36_3";
+    public static final String KEY_SF36_4 = "SF36_4";
+    public static final String KEY_SF36_5 = "SF36_5";
+    public static final String KEY_SF36_6 = "SF36_6";
+    public static final String KEY_SF36_7 = "SF36_7";
+    public static final String KEY_SF36_8 = "SF36_8";
+    public static final String KEY_SF36_9 = "SF36_9";
+    public static final String KEY_SF36_10 = "SF36_10";
+
+    public static final String KEY_NMS1 = "NMS1";
+    public static final String KEY_NMS2 = "NMS2";
+    public static final String KEY_NMS3 = "NMS3";
+    public static final String KEY_NMS4 = "NMS4";
+    public static final String KEY_NMS5 = "NMS5";
+    public static final String KEY_NMS6 = "NMS6";
+    public static final String KEY_NMS7 = "NMS7";
+    public static final String KEY_NMS8 = "NMS8";
+    public static final String KEY_NMS9 = "NMS9";
+    public static final String KEY_NMS10 = "NMS10";
+    public static final String KEY_NMS11 = "NMS11";
+    public static final String KEY_NMS12 = "NMS12";
+    public static final String KEY_NMS13 = "NMS13";
+    public static final String KEY_NMS14 = "NMS14";
+    public static final String KEY_NMS15 = "NMS15";
+    public static final String KEY_NMS16 = "NMS16";
+    public static final String KEY_NMS17 = "NMS17";
+    public static final String KEY_NMS18 = "NMS18";
+    public static final String KEY_NMS19 = "NMS19";
+    public static final String KEY_NMS20 = "NMS20";
+    public static final String KEY_NMS21 = "NMS21";
+    public static final String KEY_NMS22 = "NMS22";
+    public static final String KEY_NMS23 = "NMS23";
+    public static final String KEY_NMS24 = "NMS24";
+    public static final String KEY_NMS25 = "NMS25";
+    public static final String KEY_NMS26 = "NMS26";
+    public static final String KEY_NMS27 = "NMS27";
+    public static final String KEY_NMS28 = "NMS28";
+    public static final String KEY_NMS29 = "NMS29";
+    public static final String KEY_NMS30 = "NMS30";
+
+    public static final String KEY_LSM1 = "LSM1";
+    public static final String KEY_LSM2 = "LSM2";
+    public static final String KEY_LSM3 = "LSM3";
+    public static final String KEY_LSM4 = "LSM4";
+    public static final String KEY_LSM5 = "LSM5";
+
     // TODO: Setup your data field numbers here (0 = KEY_ROWID, 1=...)
     public static final int COL_FIRSTNAME = 1;
     public static final int COL_LASTNAME = 2;
     public static final int COL_HOSPITALID = 3;
-    public static final int COL_GDS_SCORE = 4;
-    public static final int COL_PDQ_SCORE = 5;
-    public static final int COL_VAHS_SCORE = 6;
-
-    public static final int COL_GDS1 = 1 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
-    public static final int COL_GDS2 = 2 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
-    public static final int COL_GDS3 = 3 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
-    public static final int COL_GDS4 = 4 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
-    public static final int COL_GDS5 = 5 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
-    public static final int COL_GDS6 = 6 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
-    public static final int COL_GDS7 = 7 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
-    public static final int COL_GDS8 = 8 + NUM_ID_FIELDS + NUM_SCORE_FIELDS;
-
-
-    public static final int COL_PDQ1 = 1 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ2 = 2 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ3 = 3 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ4 = 4 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ5 = 5 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ6 = 6 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ7 = 7 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ8 = 8 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ9 = 9 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ10 = 10 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ11 = 11 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ12 = 12 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ13 = 13 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ14 = 14 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ15 = 15 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ16 = 16 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ17 = 17 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ18 = 18 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ19 = 19 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-    public static final int COL_PDQ20 = 20 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS;
-
-    public static final int COL_VAHS1 = 1 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
-    public static final int COL_VAHS2 = 2 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
-    public static final int COL_VAHS3 = 3 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
-    public static final int COL_VAHS4 = 4 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
-    public static final int COL_VAHS5 = 5 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
-    public static final int COL_VAHS6 = 6 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
-    public static final int COL_VAHS7 = 7 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
-    public static final int COL_VAHS8 = 8 + NUM_ID_FIELDS + NUM_SCORE_FIELDS + NUM_GDS_FIELDS + NUM_PDQ_FIELDS;
-
-
 
 
     //TODO: Set all keys for data table
     public static final String[] ALL_DATA_KEYS = new String[] {KEY_ROWID, KEY_FIRSTNAME, KEY_LASTNAME, KEY_HOSPITALID,
-            KEY_GDS_SCORE, KEY_PDQ_SCORE, KEY_VAHS_SCORE,
-            KEY_GDS1, KEY_GDS2, KEY_GDS3, KEY_GDS4, KEY_GDS5, KEY_GDS6, KEY_GDS7, KEY_GDS8,
-            KEY_PDQ1, KEY_PDQ2, KEY_PDQ3, KEY_PDQ4, KEY_PDQ5, KEY_PDQ6, KEY_PDQ7, KEY_PDQ8, KEY_PDQ9, KEY_PDQ10, KEY_PDQ11, KEY_PDQ12, KEY_PDQ13, KEY_PDQ14, KEY_PDQ15, KEY_PDQ16, KEY_PDQ17, KEY_PDQ18, KEY_PDQ19, KEY_PDQ20,
-            KEY_VAHS1, KEY_VAHS2, KEY_VAHS3, KEY_VAHS4, KEY_VAHS5, KEY_VAHS6, KEY_VAHS7, KEY_VAHS8
+            KEY_VAHS_SCORE, KEY_SF36_SCORE, KEY_NMS_SCORE, KEY_PDQ20_SCORE, KEY_LSM_SCORE, KEY_GDS_SCORE,
+            KEY_VAHS1, KEY_VAHS2, KEY_VAHS3, KEY_VAHS4, KEY_VAHS5, KEY_VAHS6, KEY_VAHS7, KEY_VAHS8,
+            KEY_SF36_1, KEY_SF36_2, KEY_SF36_3, KEY_SF36_4, KEY_SF36_5, KEY_SF36_6, KEY_SF36_7, KEY_SF36_8, KEY_SF36_9, KEY_SF36_10,
+            KEY_NMS1, KEY_NMS2, KEY_NMS3, KEY_NMS4, KEY_NMS5, KEY_NMS6, KEY_NMS7, KEY_NMS8, KEY_NMS9, KEY_NMS10, KEY_NMS11, KEY_NMS12, KEY_NMS13, KEY_NMS14, KEY_NMS15, KEY_NMS16, KEY_NMS17, KEY_NMS18, KEY_NMS19, KEY_NMS20, KEY_NMS21, KEY_NMS22, KEY_NMS23, KEY_NMS24, KEY_NMS25, KEY_NMS26, KEY_NMS27, KEY_NMS28, KEY_NMS29, KEY_NMS30,
+            KEY_PDQ20_1, KEY_PDQ20_2, KEY_PDQ20_3, KEY_PDQ20_4, KEY_PDQ20_5, KEY_PDQ20_6, KEY_PDQ20_7, KEY_PDQ20_8, KEY_PDQ20_9, KEY_PDQ20_10, KEY_PDQ20_11, KEY_PDQ20_12, KEY_PDQ20_13, KEY_PDQ20_14, KEY_PDQ20_15, KEY_PDQ20_16, KEY_PDQ20_17, KEY_PDQ20_18, KEY_PDQ20_19, KEY_PDQ20_20,
+            KEY_LSM1, KEY_LSM2, KEY_LSM3, KEY_LSM4, KEY_LSM5,
+            KEY_GDS1, KEY_GDS2, KEY_GDS3, KEY_GDS4, KEY_GDS5, KEY_GDS6, KEY_GDS7, KEY_GDS8
     };
 
     // DB info: its name, and the tables we are using
@@ -147,7 +147,7 @@ public class DBAdapter {
     public static final String DATA_TABLE = "dataTable";
 
     // Track DB version if a new version of your app changes the format.
-    public static final int DATABASE_VERSION = 16;
+    public static final int DATABASE_VERSION = 24;
 
 
     //Table Create Statements
@@ -171,39 +171,12 @@ public class DBAdapter {
                     + KEY_LASTNAME + " text, "
                     + KEY_HOSPITALID + " text, "
 
-                    + KEY_GDS_SCORE + " text, "
-                    + KEY_PDQ_SCORE + " text, "
                     + KEY_VAHS_SCORE + " text, "
-
-                    + KEY_GDS1 + " text, "
-                    + KEY_GDS2 + " text, "
-                    + KEY_GDS3 + " text, "
-                    + KEY_GDS4 + " text, "
-                    + KEY_GDS5 + " text, "
-                    + KEY_GDS6 + " text, "
-                    + KEY_GDS7 + " text, "
-                    + KEY_GDS8 + " text, "
-
-                    + KEY_PDQ1 + " text, "
-                    + KEY_PDQ2 + " text, "
-                    + KEY_PDQ3 + " text, "
-                    + KEY_PDQ4 + " text, "
-                    + KEY_PDQ5 + " text, "
-                    + KEY_PDQ6 + " text, "
-                    + KEY_PDQ7 + " text, "
-                    + KEY_PDQ8 + " text, "
-                    + KEY_PDQ9 + " text, "
-                    + KEY_PDQ10 + " text, "
-                    + KEY_PDQ11 + " text, "
-                    + KEY_PDQ12 + " text, "
-                    + KEY_PDQ13 + " text, "
-                    + KEY_PDQ14 + " text, "
-                    + KEY_PDQ15 + " text, "
-                    + KEY_PDQ16 + " text, "
-                    + KEY_PDQ17 + " text, "
-                    + KEY_PDQ18 + " text, "
-                    + KEY_PDQ19 + " text, "
-                    + KEY_PDQ20 + " text, "
+                    + KEY_SF36_SCORE + " text, "
+                    + KEY_NMS_SCORE + " text, "
+                    + KEY_PDQ20_SCORE + " text, "
+                    + KEY_LSM_SCORE + " text, "
+                    + KEY_GDS_SCORE + " text, "
 
                     + KEY_VAHS1 + " text, "
                     + KEY_VAHS2 + " text, "
@@ -212,8 +185,85 @@ public class DBAdapter {
                     + KEY_VAHS5 + " text, "
                     + KEY_VAHS6 + " text, "
                     + KEY_VAHS7 + " text, "
-                    + KEY_VAHS8 + " text"
+                    + KEY_VAHS8 + " text, "
 
+                    + KEY_SF36_1 + " text, "
+                    + KEY_SF36_2 + " text, "
+                    + KEY_SF36_3 + " text, "
+                    + KEY_SF36_4 + " text, "
+                    + KEY_SF36_5 + " text, "
+                    + KEY_SF36_6 + " text, "
+                    + KEY_SF36_7 + " text, "
+                    + KEY_SF36_8 + " text, "
+                    + KEY_SF36_9 + " text, "
+                    + KEY_SF36_10 + " text, "
+
+                    + KEY_NMS1 + " text, "
+                    + KEY_NMS2 + " text, "
+                    + KEY_NMS3 + " text, "
+                    + KEY_NMS4 + " text, "
+                    + KEY_NMS5 + " text, "
+                    + KEY_NMS6 + " text, "
+                    + KEY_NMS7 + " text, "
+                    + KEY_NMS8 + " text, "
+                    + KEY_NMS9 + " text, "
+                    + KEY_NMS10 + " text, "
+                    + KEY_NMS11 + " text, "
+                    + KEY_NMS12 + " text, "
+                    + KEY_NMS13 + " text, "
+                    + KEY_NMS14 + " text, "
+                    + KEY_NMS15 + " text, "
+                    + KEY_NMS16 + " text, "
+                    + KEY_NMS17 + " text, "
+                    + KEY_NMS18 + " text, "
+                    + KEY_NMS19 + " text, "
+                    + KEY_NMS20 + " text, "
+                    + KEY_NMS21 + " text, "
+                    + KEY_NMS22 + " text, "
+                    + KEY_NMS23 + " text, "
+                    + KEY_NMS24 + " text, "
+                    + KEY_NMS25 + " text, "
+                    + KEY_NMS26 + " text, "
+                    + KEY_NMS27 + " text, "
+                    + KEY_NMS28 + " text, "
+                    + KEY_NMS29 + " text, "
+                    + KEY_NMS30 + " text, "
+
+                    + KEY_PDQ20_1 + " text, "
+                    + KEY_PDQ20_2 + " text, "
+                    + KEY_PDQ20_3 + " text, "
+                    + KEY_PDQ20_4 + " text, "
+                    + KEY_PDQ20_5 + " text, "
+                    + KEY_PDQ20_6 + " text, "
+                    + KEY_PDQ20_7 + " text, "
+                    + KEY_PDQ20_8 + " text, "
+                    + KEY_PDQ20_9 + " text, "
+                    + KEY_PDQ20_10 + " text, "
+                    + KEY_PDQ20_11 + " text, "
+                    + KEY_PDQ20_12 + " text, "
+                    + KEY_PDQ20_13 + " text, "
+                    + KEY_PDQ20_14 + " text, "
+                    + KEY_PDQ20_15 + " text, "
+                    + KEY_PDQ20_16 + " text, "
+                    + KEY_PDQ20_17 + " text, "
+                    + KEY_PDQ20_18 + " text, "
+                    + KEY_PDQ20_19 + " text, "
+                    + KEY_PDQ20_20 + " text, "
+
+                    + KEY_LSM1 + " text, "
+                    + KEY_LSM2 + " text, "
+                    + KEY_LSM3 + " text, "
+                    + KEY_LSM4 + " text, "
+                    + KEY_LSM5 + " text, "
+
+                    + KEY_GDS1 + " text, "
+                    + KEY_GDS2 + " text, "
+                    + KEY_GDS3 + " text, "
+                    + KEY_GDS4 + " text, "
+                    + KEY_GDS5 + " text, "
+                    + KEY_GDS6 + " text, "
+                    + KEY_GDS7 + " text, "
+                    + KEY_GDS8 + " text"
 
                     // Rest  of creation:
                     + ");";
@@ -317,7 +367,9 @@ public class DBAdapter {
         // Create row's data:
         ContentValues newValues = new ContentValues();
         Cursor c = getRowData(rowId);
+        Log.d("debug", String.valueOf(sqlColumn));
         String key = c.getColumnName(sqlColumn);
+        Log.d("debug", key);
 
         newValues.put(key, answer);
 

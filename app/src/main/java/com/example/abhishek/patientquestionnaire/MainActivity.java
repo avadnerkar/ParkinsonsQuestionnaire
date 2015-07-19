@@ -1,7 +1,6 @@
 package com.example.abhishek.patientquestionnaire;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -10,24 +9,18 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AbsoluteLayout;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ViewFlipper;
 
 import com.opencsv.CSVWriter;
 
@@ -35,25 +28,25 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
 
 public class MainActivity extends ActionBarActivity {
 
-    //public ViewFlipper vf;
     Locale myLocale;
-    //public static int count;
     public static int numIntroScreens = 2;
     public static DBAdapter myDb;
     public static long currentPatientId;
     private String[] mSectionTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
-    public CharSequence mTitle;
     public List<Cell_Item> cellItems;
     public static int currentCell;
     public static List<Cell_Item.CellType> nonQuestionSubset;
+    public static int numIntroFields = 3;
+    public static int numScoreFields = 6;
 
 
 
@@ -62,50 +55,103 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         openDB();
         cellItems = new ArrayList<>();
-        cellItems.add(new Cell_Item(this, null, null, Cell_Item.CellType.INTRO_LANGUAGE, -1,null));
-        cellItems.add(new Cell_Item(this, null, null, Cell_Item.CellType.INTRO_DETAILS, myDb.COL_FIRSTNAME,null));
+        cellItems.add(new Cell_Item(this, null, null, Cell_Item.CellType.INTRO_LANGUAGE, -1, null));
+        cellItems.add(new Cell_Item(this, null, null, Cell_Item.CellType.INTRO_DETAILS, -1,null));
 
-        cellItems.add(new Cell_Item(this, getString(R.string.gdsTitle),getString(R.string.gdsPreamble), Cell_Item.CellType.INTRO_QUESTIONNAIRE, -1,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.gds1), null, Cell_Item.CellType.QUESTION_YES_NO, myDb.COL_GDS1,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.gds2), null, Cell_Item.CellType.QUESTION_YES_NO, myDb.COL_GDS2,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.gds3), null, Cell_Item.CellType.QUESTION_YES_NO, myDb.COL_GDS3,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.gds4), null, Cell_Item.CellType.QUESTION_YES_NO, myDb.COL_GDS4,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.gds5), null, Cell_Item.CellType.QUESTION_YES_NO, myDb.COL_GDS5,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.gds6), null, Cell_Item.CellType.QUESTION_YES_NO, myDb.COL_GDS6,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.gds7), null, Cell_Item.CellType.QUESTION_YES_NO, myDb.COL_GDS7,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.gds8), null, Cell_Item.CellType.QUESTION_YES_NO, myDb.COL_GDS8,null));
-
-        cellItems.add(new Cell_Item(this, getString(R.string.pdqTitle),getString(R.string.pdqPreamble), Cell_Item.CellType.INTRO_QUESTIONNAIRE, -1,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq1), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ1,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq2), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ2,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq3), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ3,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq4), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ4,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq5), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ5,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq6), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ6,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq7), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ7,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq8), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ8,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq9), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ9,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq10), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ10,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq11), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ11,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq12), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ12,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq13), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ13,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq14), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ14,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq15), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ15,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq16), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ16,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq17), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ17,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq18), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ18,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq19), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ19,null));
-        cellItems.add(new Cell_Item(this, getString(R.string.pdq20), getString(R.string.pdqIntro), Cell_Item.CellType.QUESTION_5_POINT, myDb.COL_PDQ20,null));
+        int sqlColumnNum = numIntroFields + numScoreFields + 1;
 
         cellItems.add(new Cell_Item(this, getString(R.string.vahsTitle), getString(R.string.vahsPreamble), Cell_Item.CellType.INTRO_QUESTIONNAIRE, -1, null));
-        cellItems.add(new Cell_Item(this, getString(R.string.vahs1), null, Cell_Item.CellType.QUESTION_10_POINT, myDb.COL_VAHS1, new String[]{"Poor","Excellent"}));
-        cellItems.add(new Cell_Item(this, getString(R.string.vahs2), null, Cell_Item.CellType.QUESTION_10_POINT, myDb.COL_VAHS2, new String[]{"Poor","Excellent"}));
-        cellItems.add(new Cell_Item(this, getString(R.string.vahs3), null, Cell_Item.CellType.QUESTION_10_POINT, myDb.COL_VAHS3, new String[]{"Much distress","None"}));
-        cellItems.add(new Cell_Item(this, getString(R.string.vahs4), null, Cell_Item.CellType.QUESTION_10_POINT, myDb.COL_VAHS4, new String[]{"Much pain","None"}));
-        cellItems.add(new Cell_Item(this, getString(R.string.vahs5), null, Cell_Item.CellType.QUESTION_10_POINT, myDb.COL_VAHS5, new String[]{"Much fatigue","None"}));
-        cellItems.add(new Cell_Item(this, getString(R.string.vahs6), null, Cell_Item.CellType.QUESTION_10_POINT, myDb.COL_VAHS6, new String[]{"Much depression","None"}));
-        cellItems.add(new Cell_Item(this, getString(R.string.vahs7), null, Cell_Item.CellType.QUESTION_10_POINT, myDb.COL_VAHS7, new String[]{"Much anxiety","None"}));
-        cellItems.add(new Cell_Item(this, getString(R.string.vahs8), null, Cell_Item.CellType.QUESTION_10_POINT, myDb.COL_VAHS8, new String[]{"Poor","Excellent"}));
+        cellItems.add(new Cell_Item(this, getString(R.string.vahs1), null, Cell_Item.CellType.QUESTION_10_POINT, sqlColumnNum++,  new String[]{"Poor","Excellent"}));
+        cellItems.add(new Cell_Item(this, getString(R.string.vahs2), null, Cell_Item.CellType.QUESTION_10_POINT, sqlColumnNum++,  new String[]{"Poor","Excellent"}));
+        cellItems.add(new Cell_Item(this, getString(R.string.vahs3), null, Cell_Item.CellType.QUESTION_10_POINT, sqlColumnNum++,  new String[]{"Much distress","None"}));
+        cellItems.add(new Cell_Item(this, getString(R.string.vahs4), null, Cell_Item.CellType.QUESTION_10_POINT, sqlColumnNum++,  new String[]{"Much pain","None"}));
+        cellItems.add(new Cell_Item(this, getString(R.string.vahs5), null, Cell_Item.CellType.QUESTION_10_POINT, sqlColumnNum++,  new String[]{"Much fatigue","None"}));
+        cellItems.add(new Cell_Item(this, getString(R.string.vahs6), null, Cell_Item.CellType.QUESTION_10_POINT, sqlColumnNum++,  new String[]{"Much depression","None"}));
+        cellItems.add(new Cell_Item(this, getString(R.string.vahs7), null, Cell_Item.CellType.QUESTION_10_POINT, sqlColumnNum++,  new String[]{"Much anxiety","None"}));
+        cellItems.add(new Cell_Item(this, getString(R.string.vahs8), null, Cell_Item.CellType.QUESTION_10_POINT, sqlColumnNum++,  new String[]{"Poor","Excellent"}));
+
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_title), getString(R.string.sf36_preamble), Cell_Item.CellType.INTRO_QUESTIONNAIRE, -1, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_1), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_2), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_3), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_4), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_5), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_6), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_7), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_8), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_9), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+        cellItems.add(new Cell_Item(this, getString(R.string.sf36_10), null, Cell_Item.CellType.QUESTION_3_POINT_SF36, sqlColumnNum++,  null));
+
+        cellItems.add(new Cell_Item(this, getString(R.string.nmsTitle),getString(R.string.nmsPreamble), Cell_Item.CellType.INTRO_QUESTIONNAIRE, -1,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms1), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms2), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms3), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms4), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms5), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms6), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms7), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms8), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms9), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms10), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms11), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms12), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms13), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms14), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms15), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms16), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms17), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms18), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms19), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms20), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms21), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms22), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms23), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms24), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms25), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms26), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms27), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms28), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms29), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.nms30), getString(R.string.nmsIntro), Cell_Item.CellType.QUESTION_YES_NO_NMS, sqlColumnNum++,null));
+
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_Title),getString(R.string.pdq20_Preamble), Cell_Item.CellType.INTRO_QUESTIONNAIRE, -1,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_1), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_2), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_3), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_4), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_5), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_6), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_7), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_8), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_9), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_10), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_11), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_12), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_13), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_14), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_15), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_16), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_17), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_18), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_19), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+        cellItems.add(new Cell_Item(this, getString(R.string.pdq20_20), getString(R.string.pdq20_Intro), Cell_Item.CellType.QUESTION_5_POINT, sqlColumnNum++, null));
+
+        cellItems.add(new Cell_Item(this, getString(R.string.lsmTitle),getString(R.string.lsmPreamble), Cell_Item.CellType.INTRO_QUESTIONNAIRE, -1,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.lsm1), getString(R.string.lsmIntro), Cell_Item.CellType.QUESTION_LSM, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.lsm2), getString(R.string.lsmIntro), Cell_Item.CellType.QUESTION_LSM, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.lsm3), getString(R.string.lsmIntro), Cell_Item.CellType.QUESTION_LSM, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.lsm4), getString(R.string.lsmIntro), Cell_Item.CellType.QUESTION_LSM, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.lsm5), getString(R.string.lsmIntro), Cell_Item.CellType.QUESTION_LSM, sqlColumnNum++,null));
+
+        cellItems.add(new Cell_Item(this, getString(R.string.gdsTitle),getString(R.string.gdsPreamble), Cell_Item.CellType.INTRO_QUESTIONNAIRE, -1,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.gds1), null, Cell_Item.CellType.QUESTION_YES_NO_GDS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.gds2), null, Cell_Item.CellType.QUESTION_YES_NO_GDS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.gds3), null, Cell_Item.CellType.QUESTION_YES_NO_GDS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.gds4), null, Cell_Item.CellType.QUESTION_YES_NO_GDS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.gds5), null, Cell_Item.CellType.QUESTION_YES_NO_GDS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.gds6), null, Cell_Item.CellType.QUESTION_YES_NO_GDS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.gds7), null, Cell_Item.CellType.QUESTION_YES_NO_GDS, sqlColumnNum++,null));
+        cellItems.add(new Cell_Item(this, getString(R.string.gds8), null, Cell_Item.CellType.QUESTION_YES_NO_GDS, sqlColumnNum++,null));
 
         cellItems.add(new Cell_Item(this, null, null, Cell_Item.CellType.CONCLUSION, -1,null));
 
@@ -206,11 +252,6 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
 
-        if (id == R.id.action_view_database) {
-            Intent intent = new Intent(MainActivity.this,ViewDatabase.class);
-            startActivity(intent);
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -272,7 +313,6 @@ public class MainActivity extends ActionBarActivity {
     public void seekbarNext(View view){
         SeekBar seekBar = (SeekBar) findViewById(R.id.intensitySlider);
         int value = seekBar.getProgress();
-        String testString = String.valueOf(value);
         myDb.updateAnswer(currentPatientId, cellItems.get(currentCell).sqlColumn, String.valueOf(value));
         currentCell++;
         loadCell(currentCell);
@@ -323,6 +363,28 @@ public class MainActivity extends ActionBarActivity {
             textView2.setText(cellItem.additionalInfo[1]);
         }
 
+        if (cellItem.cellType == Cell_Item.CellType.QUESTION_LSM){
+            SeekBar seekBar = (SeekBar) findViewById(R.id.intensitySlider);
+            seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    int value = seekBar.getProgress();
+                    TextView textView = (TextView) findViewById(R.id.seekbarDays);
+                    textView.setText(String.valueOf(value));
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                }
+            });
+        }
+
 
     }
 
@@ -342,63 +404,39 @@ public class MainActivity extends ActionBarActivity {
             Cursor c = myDb.getAllRowData();
             writer.writeNext(c.getColumnNames());
 
-            String questionStr[] = {"", "", "", "",
-                    "", "", "",
-
-                    getResources().getString(R.string.gds1),
-                    getResources().getString(R.string.gds2),
-                    getResources().getString(R.string.gds3),
-                    getResources().getString(R.string.gds4),
-                    getResources().getString(R.string.gds5),
-                    getResources().getString(R.string.gds6),
-                    getResources().getString(R.string.gds7),
-                    getResources().getString(R.string.gds8),
-
-                    getResources().getString(R.string.pdq1),
-                    getResources().getString(R.string.pdq2),
-                    getResources().getString(R.string.pdq3),
-                    getResources().getString(R.string.pdq4),
-                    getResources().getString(R.string.pdq5),
-                    getResources().getString(R.string.pdq6),
-                    getResources().getString(R.string.pdq7),
-                    getResources().getString(R.string.pdq8),
-                    getResources().getString(R.string.pdq9),
-                    getResources().getString(R.string.pdq10),
-                    getResources().getString(R.string.pdq11),
-                    getResources().getString(R.string.pdq12),
-                    getResources().getString(R.string.pdq13),
-                    getResources().getString(R.string.pdq14),
-                    getResources().getString(R.string.pdq15),
-                    getResources().getString(R.string.pdq16),
-                    getResources().getString(R.string.pdq17),
-                    getResources().getString(R.string.pdq18),
-                    getResources().getString(R.string.pdq19),
-                    getResources().getString(R.string.pdq20),
-
-                    getResources().getString(R.string.vahs1),
-                    getResources().getString(R.string.vahs2),
-                    getResources().getString(R.string.vahs3),
-                    getResources().getString(R.string.vahs4),
-                    getResources().getString(R.string.vahs5),
-                    getResources().getString(R.string.vahs6),
-                    getResources().getString(R.string.vahs7),
-                    getResources().getString(R.string.vahs8)
-            };
+            String emptyStr[] = {"", "", "", "",
+                    "", "", "", "", "", ""};
+            int sqlCount = 0;
+            for (int i =0; i<cellItems.size(); i++){
+                if (cellItems.get(i).sqlColumn != -1){
+                    sqlCount++;
+                }
+            }
+            String[] questionStr = new String[sqlCount];
+            int count = 0;
+            for (int i =0; i<cellItems.size(); i++){
+                if (cellItems.get(i).sqlColumn != -1){
+                    questionStr[count] = cellItems.get(i).title;
+                    count++;
+                }
+            }
 
 
-            writer.writeNext(questionStr);
+            String combinedStr[] = concat(emptyStr, questionStr);
+            writer.writeNext(combinedStr);
 
 
 
             if (c.moveToFirst()){
                 do {
-                    String arrStr[] ={c.getString(myDb.COL_ROWID), c.getString(myDb.COL_FIRSTNAME), c.getString(myDb.COL_LASTNAME), c.getString(myDb.COL_HOSPITALID),
-                            "", "", "",
-                            c.getString(myDb.COL_GDS1), c.getString(myDb.COL_GDS2), c.getString(myDb.COL_GDS3), c.getString(myDb.COL_GDS4), c.getString(myDb.COL_GDS5), c.getString(myDb.COL_GDS6), c.getString(myDb.COL_GDS7), c.getString(myDb.COL_GDS8),
-                            c.getString(myDb.COL_PDQ1), c.getString(myDb.COL_PDQ2), c.getString(myDb.COL_PDQ3), c.getString(myDb.COL_PDQ4), c.getString(myDb.COL_PDQ5), c.getString(myDb.COL_PDQ6), c.getString(myDb.COL_PDQ7), c.getString(myDb.COL_PDQ8), c.getString(myDb.COL_PDQ9), c.getString(myDb.COL_PDQ10), c.getString(myDb.COL_PDQ11), c.getString(myDb.COL_PDQ12), c.getString(myDb.COL_PDQ13), c.getString(myDb.COL_PDQ14), c.getString(myDb.COL_PDQ15), c.getString(myDb.COL_PDQ16), c.getString(myDb.COL_PDQ17), c.getString(myDb.COL_PDQ18), c.getString(myDb.COL_PDQ19), c.getString(myDb.COL_PDQ20),
-                            c.getString(myDb.COL_VAHS1), c.getString(myDb.COL_VAHS2), c.getString(myDb.COL_VAHS3), c.getString(myDb.COL_VAHS4), c.getString(myDb.COL_VAHS5), c.getString(myDb.COL_VAHS6), c.getString(myDb.COL_VAHS7), c.getString(myDb.COL_VAHS8)
-                    };
-                    writer.writeNext(arrStr);
+                    String answerStringsIntro[] ={c.getString(myDb.COL_ROWID), c.getString(myDb.COL_FIRSTNAME), c.getString(myDb.COL_LASTNAME), c.getString(myDb.COL_HOSPITALID), "", "", "", "", "", ""};
+
+                    String answerStrings[] = concat(answerStringsIntro, new String[sqlCount]);
+                    for (int i = numIntroFields + numScoreFields + 1; i<sqlCount + numIntroFields + numScoreFields + 1; i++){
+                        answerStrings[i] = c.getString(i);
+                    }
+                    writer.writeNext(answerStrings);
+
                 } while(c.moveToNext());
             }
 
@@ -411,6 +449,12 @@ public class MainActivity extends ActionBarActivity {
         }
 
 
+    }
+
+    public static <T> T[] concat(T[] first, T[] second) {
+        T[] result = Arrays.copyOf(first, first.length + second.length);
+        System.arraycopy(second, 0, result, first.length, second.length);
+        return result;
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {

@@ -11,7 +11,7 @@ public class Cell_Item {
     public final String title;
     public final String subtitle;
     public enum CellType {
-        INTRO_LANGUAGE, INTRO_DETAILS, INTRO_QUESTIONNAIRE, QUESTION_YES_NO, QUESTION_5_POINT, QUESTION_10_POINT, CONCLUSION
+        INTRO_LANGUAGE, INTRO_DETAILS, INTRO_QUESTIONNAIRE, QUESTION_YES_NO_GDS, QUESTION_YES_NO_NMS, QUESTION_5_POINT, QUESTION_10_POINT, QUESTION_3_POINT_SF36, QUESTION_LSM, CONCLUSION
     }
     public final CellType cellType;
     public final int sqlColumn;
@@ -46,10 +46,15 @@ public class Cell_Item {
                 titleId = R.id.cell_title;
                 subtitleId = R.id.cell_description;
                 break;
-            case QUESTION_YES_NO:
-                layoutId = R.layout.cell_question_yes_no;
+            case QUESTION_YES_NO_GDS:
+                layoutId = R.layout.cell_question_yes_no_gds;
                 titleId = R.id.cell_question;
                 subtitleId = -1;
+                break;
+            case QUESTION_YES_NO_NMS:
+                layoutId = R.layout.cell_question_yes_no_nms;
+                titleId = R.id.cell_question;
+                subtitleId = R.id.cell_subtitle;
                 break;
             case QUESTION_5_POINT:
                 layoutId = R.layout.cell_question_5_point;
@@ -60,6 +65,16 @@ public class Cell_Item {
                 layoutId = R.layout.cell_question_10_point;
                 titleId = R.id.cell_question;
                 subtitleId = -1;
+                break;
+            case QUESTION_3_POINT_SF36:
+                layoutId = R.layout.cell_question_3_point_sf36;
+                titleId = R.id.cell_question;
+                subtitleId = -1;
+                break;
+            case QUESTION_LSM:
+                layoutId = R.layout.cell_question_lsm;
+                titleId = R.id.cell_question;
+                subtitleId = R.id.cell_intro;
                 break;
             case CONCLUSION:
                 layoutId = R.layout.cell_conclusion;

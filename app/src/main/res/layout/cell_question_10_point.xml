@@ -33,13 +33,30 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:orientation="vertical"
-        android:background="@drawable/rounded_rectangle_blue">
+        android:background="@drawable/rounded_rectangle_red">
 
-        <SeekBar android:id="@+id/intensitySlider"
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:max="10"/>
+            android:orientation="horizontal">
+
+            <SeekBar android:id="@+id/intensitySlider"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:thumb="@drawable/thumb_image"
+                style="@style/tallerBarStyle"
+                android:gravity="center"
+                android:max="10"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:minHeight="6dip"
+                android:maxHeight="6dip" />
+
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -181,7 +198,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/next"
-        android:onClick="seekbarNext"/>
+        android:textSize="24sp"
+        android:onClick="seekbarNext"
+        android:background="@drawable/rounded_rectangle_blue"
+        android:textColor="@color/White"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"/>
 
 
 </LinearLayout>

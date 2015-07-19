@@ -23,6 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_conclude"
+        android:background="@drawable/rounded_rectangle_blue"
+        android:textColor="@color/White"
+        android:padding="30dp"
         android:onClick="concludeQuestionnaire"
         android:textSize="30sp"
         android:layout_gravity="center_horizontal|center_vertical"/>
