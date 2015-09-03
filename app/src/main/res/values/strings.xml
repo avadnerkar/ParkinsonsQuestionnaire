@@ -1,16 +1,21 @@
 <resources>
     <string name="app_name">Questionnaire</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
     <string-array
         name="section_titles">
+        <item>PGI</item>
         <item>VAHS</item>
         <item>SF36</item>
+        <item>SHAPS-4</item>
         <item>PD NMS</item>
         <item>PDQ20</item>
         <item>LSM</item>
+        <item>PAS-A</item>
+        <item>PAS-B</item>
+        <item>PAS-C</item>
+        <item>AS</item>
+        <item>PDQ8</item>
         <item>GDS</item>
     </string-array>
 
@@ -34,6 +39,14 @@
 
     <!-- Questions -->
 
+    <!-- PGI -->
+    <string name="pgi_intro1">Please enter up to 5 areas</string>
+    <string name="pgi_area1">Area 1</string>
+    <string name="pgi_area2">Area 2</string>
+    <string name="pgi_area3">Area 3</string>
+    <string name="pgi_area4">Area 4</string>
+    <string name="pgi_area5">Area 5</string>
+
     <!-- Geriatric depression scale -->
     <string name="gdsTitle">GDS</string>
     <string name="gdsPreamble">Please select yes or no for each question</string>
@@ -50,9 +63,9 @@
     <!-- Perceived deficit questionnaire -->
     <string name="pdq20_Title">PDQ20</string>
     <string name="pdq20_Preamble">The following questions describe several situations in which a person may encounter problems with memory, attention or concentration.  If you are marking your own answers, please check the appropriate response based on your cognitive function during the past 4 weeks.  Please answer every question.  If you are not sure which answer to select, please choose the one answer that comes closest to describing you.</string>
-    <string name="pdq20_Intro">During the past 4 weeks, how often did you...</string>
+    <string name="pdq20_Intro"><![CDATA[<b>During the past 4 weeks</b>, how often did you...]]></string>
     <string name="pdq20_1">Lose your train of thought when speaking?</string>
-    <string name="pdq20_2">Have difficulty remembering the names of people - even ones you have met several times?</string>
+    <string name="pdq20_2">Have difficulty remembering the names of people, even ones you have met several times?</string>
     <string name="pdq20_3">Forget what you came in for?</string>
     <string name="pdq20_4">Have trouble getting things organized?</string>
     <string name="pdq20_5">Have trouble concentrating on what people are saying during a conversation?</string>
@@ -62,12 +75,12 @@
     <string name="pdq20_9">Have trouble concentrating on things like watching a television program or reading a book?</string>
     <string name="pdq20_10">Forget what you did the night before?</string>
     <string name="pdq20_11">Forget the date unless you looked it up?</string>
-    <string name="pdq20_12">Have trouble getting started - even if you had a lot of things to do?</string>
+    <string name="pdq20_12">Have trouble getting started, even if you had a lot of things to do?</string>
     <string name="pdq20_13">Find your mind drifting?</string>
     <string name="pdq20_14">Forget what you talked about after a telephone conversation?</string>
     <string name="pdq20_15">Forget to do things like turn off the stove or turn on your alarm clock?</string>
     <string name="pdq20_16">Feel like your mind went totally blank?</string>
-    <string name="pdq20_17">Have trouble holding phone numbers in your head - even for a few seconds?</string>
+    <string name="pdq20_17">Have trouble holding phone numbers in your head, even for a few seconds?</string>
     <string name="pdq20_18">Forget what you did last weekend?</string>
     <string name="pdq20_19">Forget to take your medication?</string>
     <string name="pdq20_20">Have trouble making decisions?</string>
@@ -85,19 +98,19 @@
 
     <string name="sf36_title">SF36</string>
     <string name="sf36_preamble">The following items are about activities you might do during a typical day.  Does your health now limit you in these activities? If so, how much?</string>
-    <string name="sf36_1">Vigorous activities such as running or lifting heavy objects or participating in strenuous sports</string>
-    <string name="sf36_2">Moderate activities such as moving a table or pushing a vacuum cleaner or bowling or playing golf</string>
+    <string name="sf36_1">Vigorous activities such as running, lifting heavy objects, or participating in strenuous sports</string>
+    <string name="sf36_2">Moderate activities such as moving a table, pushing a vacuum cleaner, bowling, or playing golf</string>
     <string name="sf36_3">Lifting or carrying groceries</string>
     <string name="sf36_4">Climbing several flights of stairs</string>
     <string name="sf36_5">Climbing one flight of stairs</string>
-    <string name="sf36_6">Bending or kneeling or stooping</string>
+    <string name="sf36_6">Bending, kneeling, or stooping</string>
     <string name="sf36_7">Walking more than a kilometre</string>
     <string name="sf36_8">Walking several blocks</string>
     <string name="sf36_9">Walking one block</string>
     <string name="sf36_10">Bathing or dressing yourself</string>
 
     <string name="nmsTitle">PD NMS Questionnaire</string>
-    <string name="nmsPreamble">NON-MOVEMENT PROBLEMS IN PARKINSON\'S \n The movement symptoms of Parkinson\'s are well known. However, other problems can sometimes occur as part of the condition or its treatment.  It is important that the doctor knows about these, particularly if they are troublesome for you.  \n\n A range of problems is listed below.  Please select \'Yes\' if you have experienced it during the past month.  The doctor or nurse may ask you some questions to help decide.  If you have not experienced the problem in the past month, tick the \'No\' box.  You should answer \'No\' even if you have had the problem in the past but not in the past month.</string>
+    <string name="nmsPreamble"><![CDATA[A range of problems is listed below.  Please select \'Yes\' if you have experienced it <b>during the past month</b>.  The doctor or nurse may ask you some questions to help decide.  If you have not experienced the problem in the past month, tick the \'No\' box.  You should answer \'No\' even if you have had the problem in the past but not in the past month.]]</string>
     <string name="nmsIntro">Have you experienced any of the following in the last month?</string>
     <string name="nms1">Dribbling of saliva during the daytime</string>
     <string name="nms2">Loss or change in your ability to taste or smell</string>
@@ -113,18 +126,18 @@
     <string name="nms12">Problems remembering things that have happened recently or forgetting to do things</string>
     <string name="nms13">Loss of interest in what is happening around you or doing things</string>
     <string name="nms14">Seeing or hearing things that you know or are told are not there</string>
-    <string name="nms15">Difficulty concentrating or staying focussed</string>
-    <string name="nms16">Feeling sad or low or blue</string>
-    <string name="nms17">Feeling anxious or frightened or panicky</string>
+    <string name="nms15">Difficulty concentrating or staying focused</string>
+    <string name="nms16">Feeling sad, low, or blue</string>
+    <string name="nms17">Feeling anxious, frightened, or panicky</string>
     <string name="nms18">Feeling less interested in sex or more interested in sex</string>
     <string name="nms19">Finding it difficult to have sex when you try</string>
-    <string name="nms20">Feeling light headed or dizzy or weak standing from sitting or lying</string>
+    <string name="nms20">Feeling light headed, dizzy, or weak standing from sitting or lying</string>
     <string name="nms21">Falling</string>
-    <string name="nms22">Finding it difficult to stay awake during activities such as working or driving or eating</string>
+    <string name="nms22">Finding it difficult to stay awake during activities such as working, driving, or eating</string>
     <string name="nms23">Difficulty getting to sleep at night or staying asleep at night</string>
-    <string name="nms24">Intense and vivid dreams or frightening dreams</string>
+    <string name="nms24">Intense, vivid dreams or frightening dreams</string>
     <string name="nms25">Talking or moving about in your sleep as if you are acting out a dream</string>
-    <string name="nms26">Unpleasant sensations in your legs at night or while resting and a feeling that you need to move</string>
+    <string name="nms26">Unpleasant sensations in your legs at night or while resting, and a feeling that you need to move</string>
     <string name="nms27">Swelling of your legs</string>
     <string name="nms28">Excessing sweating</string>
     <string name="nms29">Double vision</string>
@@ -133,11 +146,73 @@
     <string name="lsmTitle">Life Space Mobility</string>
     <string name="lsmPreamble">Please select the number of days using the slider</string>
     <string name="lsmIntro">During the past 4 weeks, how many days have you:</string>
-    <string name="lsm1">been to other rooms in our home besides the room where you sleep?</string>
-    <string name="lsm2">been to an area outside your home such as your porch or deck or patio or hallway of an apartment building or garage?</string>
+    <string name="lsm1">been to other rooms in your home besides the room where you sleep?</string>
+    <string name="lsm2">been to an area outside your home such as your porch, deck, patio, hallway of an apartment building, or garage?</string>
     <string name="lsm3">been to places in your neighbourhood other than your own yard or apartment building?</string>
     <string name="lsm4">been to places outside your neighbourhood but within your town</string>
     <string name="lsm5">been to places outside your town?</string>
+
+    <string name="pasATitle">Parkinson\'s Anxiety Scale A</string>
+    <string name="pasAPreamble"> </string>
+    <string name="pasAIntro"><![CDATA[<b>In the past four weeks</b>, to what extent did you experience the following symptoms?]]></string>
+    <string name="pasA1">Feeling anxious or nervous</string>
+    <string name="pasA2">Feeling tense or stressed</string>
+    <string name="pasA3">Being unable to relax</string>
+    <string name="pasA4">Excessive worrying about everyday matters</string>
+    <string name="pasA5">Fear of something bad, or even the worst, happening</string>
+
+    <string name="pasBTitle">Parkinson\'s Anxiety Scale B</string>
+    <string name="pasBPreamble"> </string>
+    <string name="pasBIntro"><![CDATA[<b>In the past four weeks</b>, did you experience episodes of the following symptoms?]]></string>
+    <string name="pasB1">Panic or intense fear</string>
+    <string name="pasB2">Shortness of breath</string>
+    <string name="pasB3">Heart palpitations or heart beating fast (not related to physical effort or activity)</string>
+    <string name="pasB4">Fear of losing control</string>
+
+
+    <string name="pasCTitle">Parkinson\'s Anxiety Scale C</string>
+    <string name="pasCPreamble"> </string>
+    <string name="pasCIntro"><![CDATA[<b>In the past four weeks</b>, to what extent did you fear or avoid the following situations?]]></string>
+    <string name="pasC1">Social situations (where one may be observed, or evaluated by others, such as speaking in public, or talking to unknown people) </string>
+    <string name="pasC2">Public settings (situations from which it may be difficult or embarrassing to escape. such as queues or lines, crowds, bridges, or public transportation)</string>
+    <string name="pasC3">Specific objects or situations (such as flying, heights, spiders other animals, needles, or blood)</string>
+
+    <string name="shapsTitle">SHAPS-4</string>
+    <string name="shapsPreamble">This questionnaire is designed to measure your ability to experience pleasure in the last few days. It is important to read each statement very carefully. Tick one of the boxes to indicate how much you agree or disagree with each statement.</string>
+    <string name="shaps1">I would enjoy being with family or close friends</string>
+    <string name="shaps2">I would find pleasure in my hobbies and pastimes</string>
+    <string name="shaps3">I would enjoy a warm bath or refreshing shower</string>
+    <string name="shaps4">I would enjoy a cup of tea or coffee or my favourite drink</string>
+
+    <string name="asTitle">AS</string>
+    <string name="asPreamble">Select one option for each question</string>
+    <string name="as1">Are you interested in learning new things?</string>
+    <string name="as2">Does anything interest you?</string>
+    <string name="as3">Are you concerned about your condition?</string>
+    <string name="as4">Do you put much effort into things?</string>
+    <string name="as5">Are you always looking for something to do?</string>
+    <string name="as6">Do you have plans and goals for the future?</string>
+    <string name="as7">Do you have motivation?</string>
+    <string name="as8">Do you have the energy for daily activities?</string>
+    <string name="as9">Does someone have to tell you what to do each day?</string>
+    <string name="as10">Are you indifferent to things?</string>
+    <string name="as11">Are you unconcerned with many things?</string>
+    <string name="as12">Do you need a push to get started on things?</string>
+    <string name="as13">Are you neither happy nor sad, just in between?</string>
+    <string name="as14">Would you consider yourself apathetic?</string>
+
+    <string name="pdq8_Title">PDQ8</string>
+    <string name="pdq8_Preamble">Please select one box for each question</string>
+    <string name="pdq8_Intro"><![CDATA[Due to having Parkinson\'s disease, how often <b>during the last month</b> have you:]]></string>
+    <string name="pdq8_1">Had difficulty getting around in public?</string>
+    <string name="pdq8_2">Had difficulty dressing yourself?</string>
+    <string name="pdq8_3">Felt depressed?</string>
+    <string name="pdq8_4">Had problems with your close personal relationships?</string>
+    <string name="pdq8_5">Had problems with your concentration, e.g. when reading or watching TV?</string>
+    <string name="pdq8_6">Felt unable to communicate with people properly?</string>
+    <string name="pdq8_7">Had painful muscle cramps or spasms?</string>
+    <string name="pdq8_8">Felt embarrassed in public due to having Parkinson\'s disease?</string>
+
 
     <!-- Answers -->
     <string name="a_yes">Yes</string>
@@ -148,9 +223,59 @@
     <string name="a_sometimes">Sometimes</string>
     <string name="a_often">Often</string>
     <string name="a_almost_always">Almost always</string>
+    <string name="a_neverA">Not at all, or never</string>
+    <string name="a_rarelyA">Very mild, or rarely</string>
+    <string name="a_sometimesA">Mild, or sometimes</string>
+    <string name="a_oftenA">Moderate, or often</string>
+    <string name="a_almost_alwaysA">Severe, or (nearly) always</string>
     <string name="a_fully_limited">Limited a lot</string>
     <string name="a_partly_limited">Partially limited</string>
     <string name="a_not_limited">Not limited</string>
+    <string name="a_not_at_all">Not at all</string>
+    <string name="a_slightly">Slightly</string>
+    <string name="a_some">Some</string>
+    <string name="a_a_lot">A lot</string>
+    <string name="a_occasionally">Occasionally</string>
+    <string name="a_always">Always</string>
+    <string name="add">Add</string>
+    <string name="pgiTitlePlain">Patient Generated Index</string>
+    <string name="pgi_areas">Identifying areas</string>
+    <string name="pgi_scores">Scoring each area</string>
+    <string name="pgi_points">Spending points</string>
+    <string name="pgi_other_areas">All other areas</string>
+    <string name="button_new_patient">Create New Patient</string>
+    <string name="title_activity_new_patient">Create New Patient</string>
+    <string name="message_no_existing_patient">No patient exists in the database</string>
+    <string name="button_existing_patient">Load previous patient</string>
+    <string name="strongly_disagree">Strongly Disagree</string>
+    <string name="disagree">Disagree</string>
+    <string name="agree">Agree</string>
+    <string name="strongly_agree">Strongly Agree</string>
+    <string name="maximum_points">Total points must be 12 or less</string>
+    <string name="ok">OK</string>
+    <string name="other_areas_warning">Please enter values for \'Other areas\'</string>
+    <string name="cancel">Cancel</string>
+    <string name="skip_title">Why are you skipping?</string>
+    <string name="not_applicable">Not applicable</string>
+    <string name="no_answer">No answer</string>
+    <string name="confirm_answer">Please confirm your answer</string>
+    <string name="zero">0</string>
+
+    <string name="a_poor">Poor</string>
+    <string name="a_excellent">Excellent</string>
+    <string name="a_much_distress">Much distress</string>
+    <string name="a_much_pain">Much pain</string>
+    <string name="a_much_fatigue">Much fatigue</string>
+    <string name="a_much_depression">Much depression</string>
+    <string name="a_much_anxiety">Much anxiety</string>
+
+    <string name="a_no_distress">None</string>
+    <string name="a_no_pain">None</string>
+    <string name="a_no_fatigue">None</string>
+    <string name="a_no_depression">None</string>
+    <string name="a_no_anxiety">None</string>
+
+
 
 
 

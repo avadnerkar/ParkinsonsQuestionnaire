@@ -29,14 +29,40 @@ public class DBAdapter {
     public static final String KEY_FIRSTNAME = "FirstName";
     public static final String KEY_LASTNAME = "LastName";
     public static final String KEY_HOSPITALID = "HospitalId";
+    public static final String KEY_PGI_SCORE = "PGIscore";
     public static final String KEY_GDS_SCORE = "GDSscore";
     public static final String KEY_PDQ20_SCORE = "PDQ20score";
     public static final String KEY_VAHS_SCORE = "VAHSscore";
     public static final String KEY_SF36_SCORE = "SF36score";
+    public static final String KEY_SHAPS_SCORE = "SHAPSscore";
     public static final String KEY_NMS_SCORE = "NMSscore";
     public static final String KEY_LSM_SCORE = "LSMscore";
+    public static final String KEY_PASA_SCORE = "PASAscore";
+    public static final String KEY_PASB_SCORE = "PASBscore";
+    public static final String KEY_PASC_SCORE = "PASCscore";
+    public static final String KEY_AS_SCORE = "ASscore";
+    public static final String KEY_PDQ8_SCORE = "PDQ8Score";
 
     // TODO: Setup your identification fields here:
+
+    public static final String KEY_PGI_AREA1 = "PGIArea1";
+    public static final String KEY_PGI_SCORE1 = "PGIScore1";
+    public static final String KEY_PGI_POINTS1 = "PGIPoints1";
+    public static final String KEY_PGI_AREA2 = "PGIArea2";
+    public static final String KEY_PGI_SCORE2 = "PGIScore2";
+    public static final String KEY_PGI_POINTS2 = "PGIPoints2";
+    public static final String KEY_PGI_AREA3 = "PGIArea3";
+    public static final String KEY_PGI_SCORE3 = "PGIScore3";
+    public static final String KEY_PGI_POINTS3 = "PGIPoints3";
+    public static final String KEY_PGI_AREA4 = "PGIArea4";
+    public static final String KEY_PGI_SCORE4 = "PGIScore4";
+    public static final String KEY_PGI_POINTS4 = "PGIPoints4";
+    public static final String KEY_PGI_AREA5 = "PGIArea5";
+    public static final String KEY_PGI_SCORE5 = "PGIScore5";
+    public static final String KEY_PGI_POINTS5 = "PGIPoints5";
+    public static final String KEY_PGI_AREA6 = "PGIArea6";
+    public static final String KEY_PGI_SCORE6 = "PGIScore6";
+    public static final String KEY_PGI_POINTS6 = "PGIPoints6";
 
     public static final String KEY_GDS1 = "GDS1";
     public static final String KEY_GDS2 = "GDS2";
@@ -88,6 +114,11 @@ public class DBAdapter {
     public static final String KEY_SF36_9 = "SF36_9";
     public static final String KEY_SF36_10 = "SF36_10";
 
+    public static final String KEY_SHAPS1 = "SHAPS1";
+    public static final String KEY_SHAPS2 = "SHAPS2";
+    public static final String KEY_SHAPS3 = "SHAPS3";
+    public static final String KEY_SHAPS4 = "SHAPS4";
+
     public static final String KEY_NMS1 = "NMS1";
     public static final String KEY_NMS2 = "NMS2";
     public static final String KEY_NMS3 = "NMS3";
@@ -125,6 +156,46 @@ public class DBAdapter {
     public static final String KEY_LSM4 = "LSM4";
     public static final String KEY_LSM5 = "LSM5";
 
+    public static final String KEY_PASA1 = "PASA1";
+    public static final String KEY_PASA2 = "PASA2";
+    public static final String KEY_PASA3 = "PASA3";
+    public static final String KEY_PASA4 = "PASA4";
+    public static final String KEY_PASA5 = "PASA5";
+
+    public static final String KEY_PASB1 = "PASB1";
+    public static final String KEY_PASB2 = "PASB2";
+    public static final String KEY_PASB3 = "PASB3";
+    public static final String KEY_PASB4 = "PASB4";
+
+    public static final String KEY_PASC1 = "PASC1";
+    public static final String KEY_PASC2 = "PASC2";
+    public static final String KEY_PASC3 = "PASC3";
+
+    public static final String KEY_AS1 = "AS1";
+    public static final String KEY_AS2 = "AS2";
+    public static final String KEY_AS3 = "AS3";
+    public static final String KEY_AS4 = "AS4";
+    public static final String KEY_AS5 = "AS5";
+    public static final String KEY_AS6 = "AS6";
+    public static final String KEY_AS7 = "AS7";
+    public static final String KEY_AS8 = "AS8";
+    public static final String KEY_AS9 = "AS9";
+    public static final String KEY_AS10 = "AS10";
+    public static final String KEY_AS11 = "AS11";
+    public static final String KEY_AS12 = "AS12";
+    public static final String KEY_AS13 = "AS13";
+    public static final String KEY_AS14 = "AS14";
+
+    public static final String KEY_PDQ8_1 = "PDQ8_1";
+    public static final String KEY_PDQ8_2 = "PDQ8_2";
+    public static final String KEY_PDQ8_3 = "PDQ8_3";
+    public static final String KEY_PDQ8_4 = "PDQ8_4";
+    public static final String KEY_PDQ8_5 = "PDQ8_5";
+    public static final String KEY_PDQ8_6 = "PDQ8_6";
+    public static final String KEY_PDQ8_7 = "PDQ8_7";
+    public static final String KEY_PDQ8_8 = "PDQ8_8";
+
+
     // TODO: Setup your data field numbers here (0 = KEY_ROWID, 1=...)
     public static final int COL_FIRSTNAME = 1;
     public static final int COL_LASTNAME = 2;
@@ -133,12 +204,19 @@ public class DBAdapter {
 
     //TODO: Set all keys for data table
     public static final String[] ALL_DATA_KEYS = new String[] {KEY_ROWID, KEY_FIRSTNAME, KEY_LASTNAME, KEY_HOSPITALID,
-            KEY_VAHS_SCORE, KEY_SF36_SCORE, KEY_NMS_SCORE, KEY_PDQ20_SCORE, KEY_LSM_SCORE, KEY_GDS_SCORE,
+            KEY_PGI_SCORE, KEY_VAHS_SCORE, KEY_SF36_SCORE, KEY_SHAPS_SCORE, KEY_NMS_SCORE, KEY_PDQ20_SCORE, KEY_LSM_SCORE, KEY_PASA_SCORE, KEY_PASB_SCORE, KEY_PASC_SCORE, KEY_AS_SCORE, KEY_PDQ8_SCORE, KEY_GDS_SCORE,
+            KEY_PGI_AREA1, KEY_PGI_SCORE1, KEY_PGI_POINTS1, KEY_PGI_AREA2, KEY_PGI_SCORE2, KEY_PGI_POINTS2, KEY_PGI_AREA3, KEY_PGI_SCORE3, KEY_PGI_POINTS3, KEY_PGI_AREA4, KEY_PGI_SCORE4, KEY_PGI_POINTS4, KEY_PGI_AREA5, KEY_PGI_SCORE5, KEY_PGI_POINTS5, KEY_PGI_AREA6, KEY_PGI_SCORE6, KEY_PGI_POINTS6,
             KEY_VAHS1, KEY_VAHS2, KEY_VAHS3, KEY_VAHS4, KEY_VAHS5, KEY_VAHS6, KEY_VAHS7, KEY_VAHS8,
             KEY_SF36_1, KEY_SF36_2, KEY_SF36_3, KEY_SF36_4, KEY_SF36_5, KEY_SF36_6, KEY_SF36_7, KEY_SF36_8, KEY_SF36_9, KEY_SF36_10,
+            KEY_SHAPS1, KEY_SHAPS2, KEY_SHAPS3, KEY_SHAPS4,
             KEY_NMS1, KEY_NMS2, KEY_NMS3, KEY_NMS4, KEY_NMS5, KEY_NMS6, KEY_NMS7, KEY_NMS8, KEY_NMS9, KEY_NMS10, KEY_NMS11, KEY_NMS12, KEY_NMS13, KEY_NMS14, KEY_NMS15, KEY_NMS16, KEY_NMS17, KEY_NMS18, KEY_NMS19, KEY_NMS20, KEY_NMS21, KEY_NMS22, KEY_NMS23, KEY_NMS24, KEY_NMS25, KEY_NMS26, KEY_NMS27, KEY_NMS28, KEY_NMS29, KEY_NMS30,
             KEY_PDQ20_1, KEY_PDQ20_2, KEY_PDQ20_3, KEY_PDQ20_4, KEY_PDQ20_5, KEY_PDQ20_6, KEY_PDQ20_7, KEY_PDQ20_8, KEY_PDQ20_9, KEY_PDQ20_10, KEY_PDQ20_11, KEY_PDQ20_12, KEY_PDQ20_13, KEY_PDQ20_14, KEY_PDQ20_15, KEY_PDQ20_16, KEY_PDQ20_17, KEY_PDQ20_18, KEY_PDQ20_19, KEY_PDQ20_20,
             KEY_LSM1, KEY_LSM2, KEY_LSM3, KEY_LSM4, KEY_LSM5,
+            KEY_PASA1, KEY_PASA2, KEY_PASA3, KEY_PASA4, KEY_PASA5,
+            KEY_PASB1, KEY_PASB2, KEY_PASB3, KEY_PASB4,
+            KEY_PASC1, KEY_PASC2, KEY_PASC3,
+            KEY_AS1, KEY_AS2, KEY_AS3, KEY_AS4, KEY_AS5, KEY_AS6, KEY_AS7, KEY_AS8, KEY_AS9, KEY_AS10, KEY_AS11, KEY_AS12, KEY_AS13, KEY_AS14,
+            KEY_PDQ8_1, KEY_PDQ8_2, KEY_PDQ8_3, KEY_PDQ8_4, KEY_PDQ8_5, KEY_PDQ8_6, KEY_PDQ8_7, KEY_PDQ8_8,
             KEY_GDS1, KEY_GDS2, KEY_GDS3, KEY_GDS4, KEY_GDS5, KEY_GDS6, KEY_GDS7, KEY_GDS8
     };
 
@@ -147,7 +225,7 @@ public class DBAdapter {
     public static final String DATA_TABLE = "dataTable";
 
     // Track DB version if a new version of your app changes the format.
-    public static final int DATABASE_VERSION = 24;
+    public static final int DATABASE_VERSION = 31;
 
 
     //Table Create Statements
@@ -171,12 +249,38 @@ public class DBAdapter {
                     + KEY_LASTNAME + " text, "
                     + KEY_HOSPITALID + " text, "
 
+                    + KEY_PGI_SCORE + " text, "
                     + KEY_VAHS_SCORE + " text, "
                     + KEY_SF36_SCORE + " text, "
+                    + KEY_SHAPS_SCORE + " text, "
                     + KEY_NMS_SCORE + " text, "
                     + KEY_PDQ20_SCORE + " text, "
                     + KEY_LSM_SCORE + " text, "
+                    + KEY_PASA_SCORE + " text, "
+                    + KEY_PASB_SCORE + " text, "
+                    + KEY_PASC_SCORE + " text, "
+                    + KEY_AS_SCORE + " text, "
+                    + KEY_PDQ8_SCORE + " text, "
                     + KEY_GDS_SCORE + " text, "
+
+                    + KEY_PGI_AREA1 + " text, "
+                    + KEY_PGI_SCORE1 + " text, "
+                    + KEY_PGI_POINTS1 + " text, "
+                    + KEY_PGI_AREA2 + " text, "
+                    + KEY_PGI_SCORE2 + " text, "
+                    + KEY_PGI_POINTS2 + " text, "
+                    + KEY_PGI_AREA3 + " text, "
+                    + KEY_PGI_SCORE3 + " text, "
+                    + KEY_PGI_POINTS3 + " text, "
+                    + KEY_PGI_AREA4 + " text, "
+                    + KEY_PGI_SCORE4 + " text, "
+                    + KEY_PGI_POINTS4 + " text, "
+                    + KEY_PGI_AREA5 + " text, "
+                    + KEY_PGI_SCORE5 + " text, "
+                    + KEY_PGI_POINTS5 + " text, "
+                    + KEY_PGI_AREA6 + " text, "
+                    + KEY_PGI_SCORE6 + " text, "
+                    + KEY_PGI_POINTS6 + " text, "
 
                     + KEY_VAHS1 + " text, "
                     + KEY_VAHS2 + " text, "
@@ -197,6 +301,11 @@ public class DBAdapter {
                     + KEY_SF36_8 + " text, "
                     + KEY_SF36_9 + " text, "
                     + KEY_SF36_10 + " text, "
+
+                    + KEY_SHAPS1 + " text, "
+                    + KEY_SHAPS2 + " text, "
+                    + KEY_SHAPS3 + " text, "
+                    + KEY_SHAPS4 + " text, "
 
                     + KEY_NMS1 + " text, "
                     + KEY_NMS2 + " text, "
@@ -255,6 +364,45 @@ public class DBAdapter {
                     + KEY_LSM3 + " text, "
                     + KEY_LSM4 + " text, "
                     + KEY_LSM5 + " text, "
+
+                    + KEY_PASA1 + " text, "
+                    + KEY_PASA2 + " text, "
+                    + KEY_PASA3 + " text, "
+                    + KEY_PASA4 + " text, "
+                    + KEY_PASA5 + " text, "
+
+                    + KEY_PASB1 + " text, "
+                    + KEY_PASB2 + " text, "
+                    + KEY_PASB3 + " text, "
+                    + KEY_PASB4 + " text, "
+
+                    + KEY_PASC1 + " text, "
+                    + KEY_PASC2 + " text, "
+                    + KEY_PASC3 + " text, "
+
+                    + KEY_AS1 + " text, "
+                    + KEY_AS2 + " text, "
+                    + KEY_AS3 + " text, "
+                    + KEY_AS4 + " text, "
+                    + KEY_AS5 + " text, "
+                    + KEY_AS6 + " text, "
+                    + KEY_AS7 + " text, "
+                    + KEY_AS8 + " text, "
+                    + KEY_AS9 + " text, "
+                    + KEY_AS10 + " text, "
+                    + KEY_AS11 + " text, "
+                    + KEY_AS12 + " text, "
+                    + KEY_AS13 + " text, "
+                    + KEY_AS14 + " text, "
+
+                    + KEY_PDQ8_1 + " text, "
+                    + KEY_PDQ8_2 + " text, "
+                    + KEY_PDQ8_3 + " text, "
+                    + KEY_PDQ8_4 + " text, "
+                    + KEY_PDQ8_5 + " text, "
+                    + KEY_PDQ8_6 + " text, "
+                    + KEY_PDQ8_7 + " text, "
+                    + KEY_PDQ8_8 + " text, "
 
                     + KEY_GDS1 + " text, "
                     + KEY_GDS2 + " text, "
@@ -367,9 +515,7 @@ public class DBAdapter {
         // Create row's data:
         ContentValues newValues = new ContentValues();
         Cursor c = getRowData(rowId);
-        Log.d("debug", String.valueOf(sqlColumn));
         String key = c.getColumnName(sqlColumn);
-        Log.d("debug", key);
 
         newValues.put(key, answer);
 

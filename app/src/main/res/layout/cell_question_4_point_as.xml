@@ -15,23 +15,10 @@
         android:layout_weight="1"/>
 
     <TextView
-        android:id="@+id/cell_subtitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/pdq20_Intro"
-        style="@style/textViewDefaultStyle"
-        android:gravity="start"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
-    <TextView
         android:id="@+id/cell_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pdq20_1"
+        android:text="@string/as1"
         style="@style/textViewDefaultStyle"/>
 
     <View
@@ -46,64 +33,53 @@
         android:orientation="horizontal"
         android:weightSum="1">
         <RadioButton
-            android:text="@string/a_never"
+            android:text="@string/a_not_at_all"
             android:button="@null"
             android:drawableBottom="@android:drawable/btn_radio"
             android:gravity="center_horizontal|bottom"
             android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:layout_weight="0.2"
-            android:textSize="@dimen/default_font_size"
-            android:onClick="buttonClick"
-            android:tag="0"/>
-
-        <RadioButton
-            android:text="@string/a_rarely"
-            android:button="@null"
-            android:drawableBottom="@android:drawable/btn_radio"
-            android:gravity="center_horizontal|bottom"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="0.2"
-            android:textSize="@dimen/default_font_size"
-            android:onClick="buttonClick"
-            android:tag="1"/>
-
-        <RadioButton
-            android:text="@string/a_sometimes"
-            android:button="@null"
-            android:drawableBottom="@android:drawable/btn_radio"
-            android:gravity="center_horizontal|bottom"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="0.2"
-            android:textSize="@dimen/default_font_size"
-            android:onClick="buttonClick"
-            android:tag="2"/>
-
-        <RadioButton
-            android:text="@string/a_often"
-            android:button="@null"
-            android:drawableBottom="@android:drawable/btn_radio"
-            android:gravity="center_horizontal|bottom"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.25"
             android:textSize="@dimen/default_font_size"
             android:onClick="buttonClick"
             android:tag="3"/>
 
         <RadioButton
-            android:text="@string/a_almost_always"
+            android:text="@string/a_slightly"
             android:button="@null"
             android:drawableBottom="@android:drawable/btn_radio"
             android:gravity="center_horizontal|bottom"
             android:layout_height="match_parent"
             android:layout_width="0dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.25"
             android:textSize="@dimen/default_font_size"
             android:onClick="buttonClick"
-            android:tag="4"/>
+            android:tag="2"/>
+
+        <RadioButton
+            android:text="@string/a_some"
+            android:button="@null"
+            android:drawableBottom="@android:drawable/btn_radio"
+            android:gravity="center_horizontal|bottom"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:textSize="@dimen/default_font_size"
+            android:onClick="buttonClick"
+            android:tag="1"/>
+
+        <RadioButton
+            android:text="@string/a_a_lot"
+            android:button="@null"
+            android:drawableBottom="@android:drawable/btn_radio"
+            android:gravity="center_horizontal|bottom"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:textSize="@dimen/default_font_size"
+            android:onClick="buttonClick"
+            android:tag="0"/>
+
     </RadioGroup>
 
     <View

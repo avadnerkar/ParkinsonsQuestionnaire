@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/textViewDefaultStyle"
+            android:text="@string/pgiTitlePlain"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:onClick="buttonPGI"
+            style="@style/buttonSmallStyle"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/textViewSmallStyle"
+            android:text="@string/pgi_areas"/>
+
+        
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/textViewSmallStyle"
+            android:text="@string/pgi_scores"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/textViewSmallStyle"
+            android:text="@string/pgi_points"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/pgi_area1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+
+        <EditText
+            android:id="@+id/pgi_score1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+        <EditText
+            android:id="@+id/pgi_points1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/pgi_area2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+
+        <EditText
+            android:id="@+id/pgi_score2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+        <EditText
+            android:id="@+id/pgi_points2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/pgi_area3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+
+        <EditText
+            android:id="@+id/pgi_score3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+        <EditText
+            android:id="@+id/pgi_points3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/pgi_area4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+
+        <EditText
+            android:id="@+id/pgi_score4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+        <EditText
+            android:id="@+id/pgi_points4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/pgi_area5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+
+        <EditText
+            android:id="@+id/pgi_score5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+        <EditText
+            android:id="@+id/pgi_points5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pgi_area6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/pgi_other_areas"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+
+        <EditText
+            android:id="@+id/pgi_score6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_trending_flat"/>
+
+        <EditText
+            android:id="@+id/pgi_points6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            style="@style/editTextSmallStyle"/>
+
+    </LinearLayout>
+
+    
+
+</LinearLayout>

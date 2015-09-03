@@ -11,7 +11,10 @@ public class Cell_Item {
     public final String title;
     public final String subtitle;
     public enum CellType {
-        INTRO_LANGUAGE, INTRO_DETAILS, INTRO_QUESTIONNAIRE, QUESTION_YES_NO_GDS, QUESTION_YES_NO_NMS, QUESTION_5_POINT, QUESTION_10_POINT, QUESTION_3_POINT_SF36, QUESTION_LSM, CONCLUSION
+        INTRO_LANGUAGE, INTRO_DETAILS, INTRO_NEW_OR_CONTINUE, INTRO_QUESTIONNAIRE,
+        QUESTION_PGI, QUESTION_YES_NO_GDS, QUESTION_YES_NO_NMS, QUESTION_5_POINT, QUESTION_5_POINT_A,
+        QUESTION_5_POINT_PDQ8, QUESTION_10_POINT, QUESTION_3_POINT_SF36, QUESTION_SHAPS,
+        QUESTION_LSM, QUESTION_AS, CONCLUSION
     }
     public final CellType cellType;
     public final int sqlColumn;
@@ -41,11 +44,23 @@ public class Cell_Item {
                 titleId = -1;
                 subtitleId = -1;
                 break;
+            case INTRO_NEW_OR_CONTINUE:
+                layoutId = R.layout.cell_intro_select_patient;
+                titleId = -1;
+                subtitleId = -1;
+                break;
             case INTRO_QUESTIONNAIRE:
                 layoutId = R.layout.cell_intro_questionnaire;
                 titleId = R.id.cell_title;
                 subtitleId = R.id.cell_description;
                 break;
+
+            case QUESTION_PGI:
+                layoutId = R.layout.cell_pgi_plain;
+                titleId = -1;
+                subtitleId = -1;
+                break;
+
             case QUESTION_YES_NO_GDS:
                 layoutId = R.layout.cell_question_yes_no_gds;
                 titleId = R.id.cell_question;
@@ -58,6 +73,16 @@ public class Cell_Item {
                 break;
             case QUESTION_5_POINT:
                 layoutId = R.layout.cell_question_5_point;
+                titleId = R.id.cell_question;
+                subtitleId = R.id.cell_subtitle;
+                break;
+            case QUESTION_5_POINT_A:
+                layoutId = R.layout.cell_question_5_point_a;
+                titleId = R.id.cell_question;
+                subtitleId = R.id.cell_subtitle;
+                break;
+            case QUESTION_5_POINT_PDQ8:
+                layoutId = R.layout.cell_question_5_point_pdq8;
                 titleId = R.id.cell_question;
                 subtitleId = R.id.cell_subtitle;
                 break;
@@ -75,6 +100,16 @@ public class Cell_Item {
                 layoutId = R.layout.cell_question_lsm;
                 titleId = R.id.cell_question;
                 subtitleId = R.id.cell_intro;
+                break;
+            case QUESTION_AS:
+                layoutId = R.layout.cell_question_4_point_as;
+                titleId = R.id.cell_question;
+                subtitleId = -1;
+                break;
+            case QUESTION_SHAPS:
+                layoutId = R.layout.cell_question_shaps;
+                titleId = R.id.cell_question;
+                subtitleId = -1;
                 break;
             case CONCLUSION:
                 layoutId = R.layout.cell_conclusion;

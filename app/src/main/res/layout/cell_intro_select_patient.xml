@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/completed"
-        style="@style/textViewLargeStyle"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <View
         android:layout_width="match_parent"
@@ -29,13 +11,26 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_conclude"
+        android:text="@string/button_new_patient"
         style="@style/buttonLargeStyle"
-        android:onClick="concludeQuestionnaire" />
+        android:onClick="buttonCreateNewPatient"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/buttonLargeStyle"
+        android:text="@string/button_existing_patient"
+        android:onClick="buttonResumePrevious"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
 
 </LinearLayout>
