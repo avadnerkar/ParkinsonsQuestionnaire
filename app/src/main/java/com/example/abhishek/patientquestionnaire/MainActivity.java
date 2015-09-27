@@ -385,20 +385,39 @@ public class MainActivity extends ActionBarActivity {
         editText = (EditText) findViewById(R.id.pgi_points5);
         int score5 = editText.getText().toString().equals("") ? 0 : Integer.valueOf(editText.getText().toString());
         editText = (EditText) findViewById(R.id.pgi_points6);
+        if (editText.getText().toString().equals("")){
+            AppUtils.showSimpleDialog(getResources().getString(R.string.other_areas_warning), this);
+            return;
+        }
         int score6 = editText.getText().toString().equals("") ? 0 : Integer.valueOf(editText.getText().toString());
 
         int totalScore = score1 + score2 + score3 + score4 + score5 + score6;
 
         editText = (EditText) findViewById(R.id.pgi_score6);
-        int rating6 = editText.getText().toString().equals("") ? 0 : Integer.valueOf(editText.getText().toString());
-
-        if (score6==0 | rating6 ==0){
+        if (editText.getText().toString().equals("")){
             AppUtils.showSimpleDialog(getResources().getString(R.string.other_areas_warning), this);
             return;
         }
 
-        if (totalScore>12){
+        if (totalScore!=12){
             AppUtils.showSimpleDialog(getResources().getString(R.string.maximum_points), this);
+            return;
+        }
+
+        EditText editText1 = (EditText) findViewById(R.id.pgi_score1);
+        int pgi_score1 = editText1.getText().toString().equals("") ? 0 : Integer.valueOf(editText1.getText().toString());
+        EditText editText2 = (EditText) findViewById(R.id.pgi_score2);
+        int pgi_score2 = editText2.getText().toString().equals("") ? 0 : Integer.valueOf(editText2.getText().toString());
+        EditText editText3 = (EditText) findViewById(R.id.pgi_score3);
+        int pgi_score3 = editText3.getText().toString().equals("") ? 0 : Integer.valueOf(editText3.getText().toString());
+        EditText editText4 = (EditText) findViewById(R.id.pgi_score4);
+        int pgi_score4 = editText4.getText().toString().equals("") ? 0 : Integer.valueOf(editText4.getText().toString());
+        EditText editText5 = (EditText) findViewById(R.id.pgi_score5);
+        int pgi_score5 = editText5.getText().toString().equals("") ? 0 : Integer.valueOf(editText5.getText().toString());
+        EditText editText6 = (EditText) findViewById(R.id.pgi_score6);
+        int pgi_score6 = editText6.getText().toString().equals("") ? 0 : Integer.valueOf(editText6.getText().toString());
+        if (pgi_score1>10 || pgi_score2>10 || pgi_score3>10 || pgi_score4>10 || pgi_score5>10 || pgi_score6>10){
+            AppUtils.showSimpleDialog(getResources().getString(R.string.maximum_score), this);
             return;
         }
 
@@ -515,6 +534,8 @@ public class MainActivity extends ActionBarActivity {
                 myDb.updateAnswer(currentPatientId, cellItems.get(currentCell).sqlColumn, String.valueOf(1 - Integer.valueOf(b.getTag().toString())));
             }
 
+        } else if (cellItems.get(currentCell).cellType == Cell_Item.CellType.QUESTION_LSM){
+            myDb.updateAnswer(currentPatientId, cellItems.get(currentCell).sqlColumn, b.getText().toString());
         } else {
             myDb.updateAnswer(currentPatientId, cellItems.get(currentCell).sqlColumn, b.getTag().toString());
         }
@@ -603,28 +624,28 @@ public class MainActivity extends ActionBarActivity {
             textView2.setText(cellItem.additionalInfo[1]);
         }
 
-        if (cellItem.cellType == Cell_Item.CellType.QUESTION_LSM){
-            SeekBar seekBar = (SeekBar) findViewById(R.id.intensitySlider);
-            final TextView textView = (TextView) findViewById(R.id.seekbarDays);
-            textView.setText(String.valueOf(seekBar.getProgress()));
-            seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    int value = seekBar.getProgress();
-                    textView.setText(String.valueOf(value));
-                }
-
-                @Override
-                public void onStartTrackingTouch(SeekBar seekBar) {
-
-                }
-
-                @Override
-                public void onStopTrackingTouch(SeekBar seekBar) {
-
-                }
-            });
-        }
+//        if (cellItem.cellType == Cell_Item.CellType.QUESTION_LSM){
+//            SeekBar seekBar = (SeekBar) findViewById(R.id.intensitySlider);
+//            final TextView textView = (TextView) findViewById(R.id.seekbarDays);
+//            textView.setText(String.valueOf(seekBar.getProgress()));
+//            seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//                @Override
+//                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                    int value = seekBar.getProgress();
+//                    textView.setText(String.valueOf(value));
+//                }
+//
+//                @Override
+//                public void onStartTrackingTouch(SeekBar seekBar) {
+//
+//                }
+//
+//                @Override
+//                public void onStopTrackingTouch(SeekBar seekBar) {
+//
+//                }
+//            });
+//        }
 
 
     }

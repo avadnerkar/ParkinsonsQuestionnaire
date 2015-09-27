@@ -97,7 +97,7 @@ public class Cell_Item {
                 subtitleId = -1;
                 break;
             case QUESTION_LSM:
-                layoutId = R.layout.cell_question_lsm;
+                layoutId = R.layout.cell_question_lsm_grid;
                 titleId = R.id.cell_question;
                 subtitleId = R.id.cell_intro;
                 break;

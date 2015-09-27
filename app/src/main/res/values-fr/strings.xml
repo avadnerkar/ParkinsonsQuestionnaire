@@ -110,8 +110,8 @@
     <string name="sf36_10">Pour prendre un bain ou m\'habiller</string>
 
     <string name="nmsTitle">PD NMS Questionnaire</string>
-    <string name="nmsPreamble"> Les symptômes du Parkinson reliés au mouvement sont très bien connus.  Par contre, d\'autres problèmes peuvent parfois apparaître en raison de cette maladie ou de son traitement.  Il est important que le médecin soit au courant de ces problèmes, particulièrement s\'ils sont gênants pour vous.  Plusieurs problèmes sont énumérés ci-dessous.  S\'il vous plait, cochez la boîte «Oui» si vous avez eu ce problème au cours du dernier mois.  Le médecin ou l\'infirmière pourrait vous poser quelques questions afin de vous aider à choisir une réponse.  Si vous n\'avez pas eu ce problème au cours du dernier mois, cochez la boîte «Non».  Vous devriez répondre «Non» même si vous avez eu ce problème dans le passé, mais pas au cours du dernier mois.</string>
-    <string name="nmsIntro">Avez-vous eu un des problèmes suivants au cours du dernier mois?</string>
+    <string name="nmsPreamble"><![CDATA[Les symptômes du Parkinson reliés au mouvement sont très bien connus.  Par contre, d\'autres problèmes peuvent parfois apparaître en raison de cette maladie ou de son traitement.  Il est important que le médecin soit au courant de ces problèmes, particulièrement s\'ils sont gênants pour vous.  Plusieurs problèmes sont énumérés ci-dessous.  S\'il vous plait, cochez la boîte «Oui» si vous avez eu ce problème <b>au cours du dernier mois</b>.  Le médecin ou l\'infirmière pourrait vous poser quelques questions afin de vous aider à choisir une réponse.  Si vous n\'avez pas eu ce problème au cours du dernier mois, cochez la boîte «Non».  Vous devriez répondre «Non» même si vous avez eu ce problème dans le passé, mais pas au cours du dernier mois.]]></string>
+    <string name="nmsIntro"><![CDATA[Avez-vous eu un des problèmes suivants <b>au cours du dernier mois</b>?]]></string>
     <string name="nms1">Salive qui dégoutte durant la journée</string>
     <string name="nms2">Perte ou changement dans votre habilité à goûter ou à sentir</string>
     <string name="nms3">Difficulté à avaler de la nourriture ou à boire, ou problème d\'etouffement</string>
@@ -253,7 +253,8 @@
     <string name="disagree">En désaccord</string>
     <string name="agree">D`accord</string>
     <string name="strongly_agree">Fortement d`accord</string>
-    <string name="maximum_points">Total de points doit être de 12 ou moins</string>
+    <string name="maximum_points">Total de points doit être de 12</string>
+    <string name="maximum_score">Marquer des points doit être 10 ou moins pour touts les domaines  </string>
     <string name="ok">OK</string>
     <string name="other_areas_warning">S\'il vous plait entrez des valeurs pour d\'autres domaines</string>
     <string name="cancel">Annuler</string>

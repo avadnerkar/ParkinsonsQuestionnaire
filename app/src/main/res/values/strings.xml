@@ -62,7 +62,7 @@
 
     <!-- Perceived deficit questionnaire -->
     <string name="pdq20_Title">PDQ20</string>
-    <string name="pdq20_Preamble">The following questions describe several situations in which a person may encounter problems with memory, attention or concentration.  If you are marking your own answers, please check the appropriate response based on your cognitive function during the past 4 weeks.  Please answer every question.  If you are not sure which answer to select, please choose the one answer that comes closest to describing you.</string>
+    <string name="pdq20_Preamble"><![CDATA[The following questions describe several situations in which a person may encounter problems with memory, attention or concentration.  If you are marking your own answers, please check the appropriate response based on your cognitive function <b>during the past 4 weeks</b>.  Please answer every question.  If you are not sure which answer to select, please choose the one answer that comes closest to describing you.]]></string>
     <string name="pdq20_Intro"><![CDATA[<b>During the past 4 weeks</b>, how often did you...]]></string>
     <string name="pdq20_1">Lose your train of thought when speaking?</string>
     <string name="pdq20_2">Have difficulty remembering the names of people, even ones you have met several times?</string>
@@ -110,8 +110,8 @@
     <string name="sf36_10">Bathing or dressing yourself</string>
 
     <string name="nmsTitle">PD NMS Questionnaire</string>
-    <string name="nmsPreamble"><![CDATA[A range of problems is listed below.  Please select \'Yes\' if you have experienced it <b>during the past month</b>.  The doctor or nurse may ask you some questions to help decide.  If you have not experienced the problem in the past month, tick the \'No\' box.  You should answer \'No\' even if you have had the problem in the past but not in the past month.]]</string>
-    <string name="nmsIntro">Have you experienced any of the following in the last month?</string>
+    <string name="nmsPreamble"><![CDATA[A range of problems is listed below.  Please select \'Yes\' if you have experienced it <b>during the past month</b>.  The doctor or nurse may ask you some questions to help decide.  If you have not experienced the problem in the past month, tick the \'No\' box.  You should answer \'No\' even if you have had the problem in the past but not in the past month.]]></string>
+    <string name="nmsIntro"><![CDATA[Have you experienced any of the following <b>in the last month</b>?]]></string>
     <string name="nms1">Dribbling of saliva during the daytime</string>
     <string name="nms2">Loss or change in your ability to taste or smell</string>
     <string name="nms3">Difficulty swallowing food or drink or problems with choking</string>
@@ -145,7 +145,7 @@
 
     <string name="lsmTitle">Life Space Mobility</string>
     <string name="lsmPreamble">Please select the number of days using the slider</string>
-    <string name="lsmIntro">During the past 4 weeks, how many days have you:</string>
+    <string name="lsmIntro"><![CDATA[<b>During the past 4 weeks</b>, how many days have you:]]></string>
     <string name="lsm1">been to other rooms in your home besides the room where you sleep?</string>
     <string name="lsm2">been to an area outside your home such as your porch, deck, patio, hallway of an apartment building, or garage?</string>
     <string name="lsm3">been to places in your neighbourhood other than your own yard or apartment building?</string>
@@ -251,7 +251,8 @@
     <string name="disagree">Disagree</string>
     <string name="agree">Agree</string>
     <string name="strongly_agree">Strongly Agree</string>
-    <string name="maximum_points">Total points must be 12 or less</string>
+    <string name="maximum_points">Total points must be 12</string>
+    <string name="maximum_score">Score must be 10 or less for each area</string>
     <string name="ok">OK</string>
     <string name="other_areas_warning">Please enter values for \'Other areas\'</string>
     <string name="cancel">Cancel</string>

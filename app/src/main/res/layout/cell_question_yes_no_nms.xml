@@ -28,8 +28,8 @@
     <TextView
         android:id="@+id/cell_question"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="@string/nms1"
+        android:layout_height="180dp"
+        android:text="@string/nms5"
         style="@style/textViewDefaultStyle"/>
     <View
         android:layout_width="match_parent"
