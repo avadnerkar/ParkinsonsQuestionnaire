@@ -773,8 +773,9 @@ public class MainActivity extends ActionBarActivity {
             }else if (position == 12){
                 currentCell = numIntroScreens + 123;
                 loadCell(currentCell);
-            }else {
-
+            }else if (position == 13){
+                currentCell = numIntroScreens + 132;
+                loadCell(currentCell);
             }
 
             mDrawerLayout.closeDrawer(mDrawerList);
